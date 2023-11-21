@@ -6,17 +6,18 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 11:29:54 by marirodr          #+#    #+#              #
-#    Updated: 2023/11/16 12:32:47 by marirodr         ###   ########.fr        #
+#    Updated: 2023/11/21 16:24:22 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= megaphone
+NAME	= phonebook
 
 CC		= c++
 
 FLAGS	= -std=c++98 -Wall -Wextra -Werror
 
-SRC		= megaphone.cpp \
+SRC		= src/Account.cpp \
+		  src/tests.cpp \
 
 OBJ		= $(SRC:.cpp=.o)
 
