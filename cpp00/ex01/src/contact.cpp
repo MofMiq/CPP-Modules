@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:23:19 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/20 13:08:44 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:19:47 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ std::string Contact::ft_get_input(void)
 
     std::cin.clear();
     std::getline(std::cin, input);
-    while (input == "")
+    while (input.empty())
     {
-        std::cout << "Please don't leave a empty field" << std::endl;
+        std::cout << "Please don't leave a empty field:" << std::endl;
         std::getline(std::cin, input);
     }
     return (input);
@@ -79,7 +79,7 @@ void Contact::ft_search_format(void)
     else
         std::cout << std::setw(11) << std::right << Contact::last_name << "|";
     if (Contact::nickname.length() > 10)
-        std::cout << std::setw(10) << std::right << Contact::nickname.substr(0, 9) << "." << std::endl;
+        std::cout << std::setw(10) << std::right << Contact::nickname.substr(0, 9) << ".|" << std::endl;
     else
         std::cout << std::setw(11) << std::right << Contact::nickname << std::endl;
 }

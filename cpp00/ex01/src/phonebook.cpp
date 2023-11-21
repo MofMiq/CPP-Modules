@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:08:33 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/20 18:39:44 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:19:25 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,14 @@ void PhoneBook::ft_add(PhoneBook *book)
 {
     if (book->c_con == 8)
         book->c_con = 0;
-    //std::cout << "book->c = " << i << std::endl; //
     book->contatcs[book->c_con].ft_create();
     book->c_con++;
-    std::cout << "i = " << book->c_con << std::endl; //
 }
 void PhoneBook::ft_display(PhoneBook *book)
 {
     int i = 0;
 
-    if (book->contatcs[0].ft_get_name() == "")
+    if (book->contatcs[0].ft_get_name().empty())
     {
         std::cout << "There aren't any contact saved yet to display" << std::endl;
         return ;
@@ -48,7 +46,7 @@ void PhoneBook::ft_display(PhoneBook *book)
     std::cout << "---------------------------------------------" << std::endl;
     while (i < 8)
     {
-        if (book->contatcs[i].ft_get_name() == "")
+        if (book->contatcs[i].ft_get_name().empty())
             break ;
         std::cout << i << "\t|";
         book->contatcs[i].ft_search_format();
@@ -57,27 +55,27 @@ void PhoneBook::ft_display(PhoneBook *book)
     book->ft_search(book);
 }
 
+/*std::cin.fail() ->check if the previous input operation failed. This could be due to an 
+inapropiate type of input, or an input that is out of range for the variable type.
+In this case, for example, if we enter a letter instead of a integer, std::cin.fail() will
+return 'true' because the input operation failed.
+*/
+
+
 void PhoneBook::ft_search(PhoneBook *book)
 {
     int i  = -1;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cout << "Please enter the index you want to display full information contact" << std::endl;
+    
+    std::cout << "Please enter the index of the contact you want to display full information for." << std::endl;
     std::cin >> i;
-    if (i >= 0 && i < 8)
+    while (std::cin.fail() || i < 0 || i > 7 || book->contatcs[i].ft_get_name().empty())
     {
-        if (book->contatcs[i].ft_get_name() != "")
-        {
-            book->contatcs[i].ft_print_contact();
-            std::cin.ignore();
-            return ;
-        }
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Please enter the index you of a contact that is already displayed on screen:" << std::endl;
+        std::cin >> i;
     }
-    // else
-    // {
-    //     std::cin.clear();
-    //     book->ft_search(book);
-    // }
-    // //bucle infitnito si le meto letras, señal o otra mierda
-    // std::cout << "Please enter a valid index, one you alredy see un the screen" << std::endl;
+    book->contatcs[i].ft_print_contact();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     return ;
 }

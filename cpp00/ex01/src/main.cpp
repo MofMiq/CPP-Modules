@@ -6,15 +6,16 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:24:32 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/20 18:18:08 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:11:20 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/phonebook.hpp"
 
-void ft_initial_msg(void)
+void ft_initial_msg(int i)
 {
-    std::cout << "Welcome to the 80s and their unbelievable technology!" << std::endl;
+    if (i == 0)
+        std::cout << "Welcome to the 80s and their unbelievable technology!" << std::endl;
     std::cout << "To use this PhoneBook, you have three options:" << std::endl;
     std::cout << " - ADD: save a new contact." << std::endl;
     std::cout << " - SEARCH: display a specific contact information." << std::endl;
@@ -26,7 +27,7 @@ int main(void)
     std::string input;
     PhoneBook book;
 
-    ft_initial_msg();
+    ft_initial_msg(0);
     while (1)
     {
         std::getline(std::cin, input);
@@ -38,6 +39,7 @@ int main(void)
             book.ft_exit();
         else
             std::cout << "Invalid command. Please enter a valid option: ADD, SEARCH or EXIT" << std::endl;
+        ft_initial_msg(1);
     }
     return (0);
 }
