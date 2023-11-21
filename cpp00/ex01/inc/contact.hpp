@@ -6,12 +6,16 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:21:58 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/16 16:41:37 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:33:00 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Contact {
 public:
@@ -28,6 +32,11 @@ private:
 
 public:
 	std::string ft_get_input(void);
+	std::string ft_get_name(void);
 	void ft_create(void);
 	void ft_print_contact(void);
+	void ft_search_format(void);
+	void ft_free_contact(void);
 };
+
+#endif

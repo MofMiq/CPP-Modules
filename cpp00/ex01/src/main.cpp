@@ -6,18 +6,38 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:24:32 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/16 16:44:50 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:18:08 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/phonebook.hpp"
 
+void ft_initial_msg(void)
+{
+    std::cout << "Welcome to the 80s and their unbelievable technology!" << std::endl;
+    std::cout << "To use this PhoneBook, you have three options:" << std::endl;
+    std::cout << " - ADD: save a new contact." << std::endl;
+    std::cout << " - SEARCH: display a specific contact information." << std::endl;
+    std::cout << " - EXIT: to exit the program." << std::endl;
+}
+
 int main(void)
 {
-    //std::string input;
-    Contact lala;
+    std::string input;
+    PhoneBook book;
 
-    lala.ft_create();
-    lala.ft_print_contact();
+    ft_initial_msg();
+    while (1)
+    {
+        std::getline(std::cin, input);
+        if (!input.compare("ADD"))
+            book.ft_add(&book);
+        else if (!input.compare("SEARCH"))
+            book.ft_display(&book);
+        else if (!input.compare("EXIT"))
+            book.ft_exit();
+        else
+            std::cout << "Invalid command. Please enter a valid option: ADD, SEARCH or EXIT" << std::endl;
+    }
     return (0);
 }

@@ -6,9 +6,12 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:15:08 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/16 15:38:59 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:18:01 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 #include "contact.hpp"
 
@@ -19,7 +22,13 @@ public:
 
 private:
     Contact contatcs[8];
+    int c_con;
 
 public:
-    void add(void);
+    int ft_exit(void);
+    void ft_add(PhoneBook *book);
+    void ft_display(PhoneBook *book);
+    void ft_search(PhoneBook *book);
 };
+
+#endif
