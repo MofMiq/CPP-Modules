@@ -6,11 +6,11 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 11:29:54 by marirodr          #+#    #+#              #
-#    Updated: 2023/11/21 16:24:22 by marirodr         ###   ########.fr        #
+#    Updated: 2023/11/22 11:57:27 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= phonebook
+NAME	= test
 
 CC		= c++
 

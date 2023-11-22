@@ -6,13 +6,17 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:23:23 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/21 16:35:08 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:57:00 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Account.hpp"
-#include "Account.hpp"
 #include <iostream>
+
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 int Account::getNbAccounts(void)
 {
@@ -51,6 +55,7 @@ void Account::makeDeposit(int deposit)
 }
 bool Account::makeWithdrawal(int withdrawal)
 {
+	return (false);
 }
 
 int Account::checkAmount(void) const

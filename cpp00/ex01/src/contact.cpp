@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:23:19 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/21 13:19:47 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:58:21 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,18 @@ std::string Contact::ft_get_name(void)
 
 void Contact::ft_search_format(void)
 {
-    if (Contact::name.length() > 10) //10 ó 11 ????
-        std::cout << std::setw(10) << std::right << Contact::name.substr(0, 9) << ".|";
+    if (Contact::name.length() > 10)
+        std::cout << std::right << Contact::name.substr(0, 9) << ".|";
     else
-        std::cout << std::setw(11) << std::right << Contact::name << "|"; //10 ó 11 ????
+        std::cout << std::setw(10) << std::right << Contact::name << "|";
     if (Contact::last_name.length() > 10)
-        std::cout << std::setw(10) << std::right << Contact::last_name.substr(0, 9) << ".|";
+        std::cout << std::right << Contact::last_name.substr(0, 9) << ".|";
     else
-        std::cout << std::setw(11) << std::right << Contact::last_name << "|";
+        std::cout << std::setw(10) << std::right << Contact::last_name << "|";
     if (Contact::nickname.length() > 10)
-        std::cout << std::setw(10) << std::right << Contact::nickname.substr(0, 9) << ".|" << std::endl;
+        std::cout << std::right << Contact::nickname.substr(0, 9) << ".|" << std::endl;
     else
-        std::cout << std::setw(11) << std::right << Contact::nickname << std::endl;
+        std::cout << std::setw(10) << std::right << Contact::nickname << "|" << std::endl;
 }
 
 void Contact::ft_free_contact(void)

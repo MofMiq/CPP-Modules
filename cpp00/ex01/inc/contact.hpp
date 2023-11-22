@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:21:58 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/20 12:33:00 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:57:58 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <limits>
 
 class Contact {
 public:

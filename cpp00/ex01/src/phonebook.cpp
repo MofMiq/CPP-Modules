@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:08:33 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/21 13:19:25 by marirodr         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:58:05 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ PhoneBook::~PhoneBook()
 }
 int PhoneBook::ft_exit(void)
 {
-    //liberar todos los contactos, cómo no lo sé
     std::cout << "CHAO" << std::endl;
     exit(0);
 }
@@ -33,6 +32,10 @@ void PhoneBook::ft_add(PhoneBook *book)
     book->contatcs[book->c_con].ft_create();
     book->c_con++;
 }
+
+/*book->contatcs[0].ft_get_name().empty() -> with empty() we check is a std::string iss empty or not
+return 'true' if it's empty, false if not. */
+
 void PhoneBook::ft_display(PhoneBook *book)
 {
     int i = 0;
@@ -55,10 +58,15 @@ void PhoneBook::ft_display(PhoneBook *book)
     book->ft_search(book);
 }
 
-/*std::cin.fail() ->check if the previous input operation failed. This could be due to an 
+/*std::cin.fail() -> check if the previous input operation failed. This could be due to an 
 inapropiate type of input, or an input that is out of range for the variable type.
 In this case, for example, if we enter a letter instead of a integer, std::cin.fail() will
 return 'true' because the input operation failed.
+
+std::cin.ignore() -> extracts characters from the input buffer and discards them.
+
+std::numeric_limits<std::streamsize>::max() gives the maximum number of characters that can be extracted
+with the '\n' char as delimiter.
 */
 
 
