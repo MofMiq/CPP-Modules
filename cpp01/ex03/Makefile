@@ -5,21 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/02 12:38:59 by marirodr          #+#    #+#              #
-#    Updated: 2024/02/08 12:43:30 by marirodr         ###   ########.fr        #
+#    Created: 2024/02/08 12:47:56 by marirodr          #+#    #+#              #
+#    Updated: 2024/02/08 15:43:23 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= 	zombie
+NAME 	= 	weapon
 
 CC		= 	c++
 
 FLAGS	= 	-std=c++98 -Wall -Werror -Wextra
 
 SRC		= 	src/main.cpp \
-			src/Zombie.cpp \
-			src/newZombie.cpp \
-			src/randomChump.cpp \
+		 	src/Weapon.cpp \
+		 	src/HumanA.cpp \
+		 	src/HumanB.cpp \
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 

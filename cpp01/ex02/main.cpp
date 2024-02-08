@@ -5,20 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 15:28:10 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/08 11:40:15 by marirodr         ###   ########.fr       */
+/*   Created: 2024/02/08 11:43:51 by marirodr          #+#    #+#             */
+/*   Updated: 2024/02/08 12:21:59 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Zombie.hpp"
+#include <iostream>
 
 int main(void)
 {
-    int i = 5;
-    Zombie *horde = zombieHorde(i, "Hunter");
+    std::string str = "HI THIS IS BRAIN";
+    std::string *stringPTR = &str;
+    std::string &stringREF = str;
 
-    for (int c = 0; c < i; c++)
-        horde[c].announce();
-    delete [] horde; //de esta manera borramos un array de objetos en cpp
+    std::cout <<  "Direccion de memoria de str: " << &str << std::endl;
+    std::cout <<  "Direccion de memoria de stringPTR: " << &stringPTR << std::endl;
+    std::cout <<  "Direccion de memoria de stringREF: " << &stringREF << std::endl;
+
+    std::cout <<  "Valor de str: " << str << std::endl;
+    std::cout <<  "Valor de stringPTR: " << *stringPTR << std::endl;
+    std::cout <<  "Valor de stringREF: " << stringREF << std::endl;
+    
     return 0;
 }

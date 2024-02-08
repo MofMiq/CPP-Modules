@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 12:51:51 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/08 10:40:58 by marirodr         ###   ########.fr       */
+/*   Created: 2024/02/08 12:50:18 by marirodr          #+#    #+#             */
+/*   Updated: 2024/02/08 16:32:56 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef H_ZOMBIE_H
-# define H_ZOMBIE_H
+#ifndef H_HUMAN_A_H
+# define H_HUMAN_A_H
 
-#include <string>
+#include <iostream>
+#include "Weapon.hpp"
 
-class Zombie {
+class HumanA 
+{
     private:
-        std::string name;
+        std::string     name;
+        Weapon          &weapon; //por que referencia aqui?
 
     public:
-        Zombie(); //constructor defaut para cuando queremos crear un objeto de una sola tacada
-        Zombie(std::string initName);
-        ~Zombie();
-        
-        void announce(void);
-        std::string getName(void);
+        HumanA(std::string initName, Weapon &initWeapon);
+        ~HumanA();
+        void attack(void);
+        const std::string getName(void) const;
         void setName(std::string newName);
 };
-
-Zombie *zombieHorde(int N, std::string name);
 
 #endif

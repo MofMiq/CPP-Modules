@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 17:53:03 by marirodr          #+#    #+#              #
-#    Updated: 2024/02/07 17:55:26 by marirodr         ###   ########.fr        #
+#    Updated: 2024/02/08 12:45:50 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC		= 	src/main.cpp \
 			src/Zombie.cpp \
 			src/zombieHorde.cpp \
 
-OBJ		=	$(SRC:.cpp=.o)
+OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 
 RM		=	rm -rf
 
@@ -34,11 +34,12 @@ $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Ready$(END)"
 
-.cpp.o:
+obj/%.o: %.cpp
+	@mkdir -p $(dir $@)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJ) obj/
 	@echo "$(RED)Objects have been removed$(END)"
 
 fclean: clean

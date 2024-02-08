@@ -5,21 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/02 12:38:59 by marirodr          #+#    #+#              #
-#    Updated: 2024/02/08 12:43:30 by marirodr         ###   ########.fr        #
+#    Created: 2024/02/08 11:43:14 by marirodr          #+#    #+#              #
+#    Updated: 2024/02/08 12:29:14 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= 	zombie
+NAME 	= 	ex02
 
 CC		= 	c++
 
 FLAGS	= 	-std=c++98 -Wall -Werror -Wextra
 
-SRC		= 	src/main.cpp \
-			src/Zombie.cpp \
-			src/newZombie.cpp \
-			src/randomChump.cpp \
+SRC		= 	main.cpp \
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 
@@ -29,14 +26,16 @@ GREEN	= 	\033[0;32m
 RED		= 	\033[0;31m
 END		= 	\033[0m
 
-all: $(NAME)
+all: obj $(NAME)
+
+obj:
+	@mkdir -p obj
 
 $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Ready$(END)"
 
 obj/%.o: %.cpp
-	@mkdir -p $(dir $@)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
