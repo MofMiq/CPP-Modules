@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 13:06:42 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/08 16:29:45 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:04:42 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int main(void)
 
     HumanA bob("Bob", club);
     bob.attack();
-    club.setType("Some other type of club");
+    club.setType("some other type of club");
     bob.attack();
+    std::cout << club.getType() << std::endl;
 
     Weapon greatsword = Weapon("moonlight greatsword");
     
@@ -29,7 +30,7 @@ int main(void)
     jim.attack();
     jim.setWeapon(greatsword);
     jim.attack();
-    greatsword.setType("Some other type of greatsword");
+    greatsword.setType("some other type of greatsword");
     jim.attack();
 
     return 0;
