@@ -6,11 +6,11 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 11:43:14 by marirodr          #+#    #+#              #
-#    Updated: 2024/02/08 12:29:14 by marirodr         ###   ########.fr        #
+#    Updated: 2024/02/13 11:44:05 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= 	ex02
+NAME 	= 	brain
 
 CC		= 	c++
 
