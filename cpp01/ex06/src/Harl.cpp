@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:01:10 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/13 17:33:03 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:05:23 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,13 @@ void Harl::complain(std::string level)
         }
         i++;
     }
-    if (i >= 4)
-        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     return ;
 }
+
+/*          int j = i;
+            while (j < 4)
+            {
+                (this->*f[j])();
+                j++;
+            }
+            return ; */

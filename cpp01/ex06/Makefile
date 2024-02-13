@@ -6,11 +6,11 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 11:49:08 by marirodr          #+#    #+#              #
-#    Updated: 2024/02/13 17:03:01 by marirodr         ###   ########.fr        #
+#    Updated: 2024/02/13 17:03:17 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	harl
+NAME	=	harlFilter
 
 CC		=	c++
 
