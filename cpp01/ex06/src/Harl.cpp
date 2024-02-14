@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:01:10 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/13 18:05:23 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/14 19:23:39 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,41 @@ void Harl::error(void)
 void Harl::complain(std::string level)
 {
     void (Harl::*f[4]) (void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    int i = levelToInt(level);
+
+    switch(i)
+    {
+        case 0:
+            (this->*f[i])();
+            i++;
+        case 1:
+            (this->*f[i])();
+            i++;
+        case 2:
+            (this->*f[i])();
+            i++;
+        case 3:
+            (this->*f[i])();
+            i++;
+            break ;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+            break ;
+    }
+    return ;
+}
+
+int levelToInt(std::string level)
+{
     std::string lvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     int i = 0;
-
     while (i < 4)
     {
         if (lvl[i] == level)
-        {
-            (this->*f[i])();
-            return ;
-        }
+            break ;
         i++;
     }
-    return ;
+    return i;
 }
 
 /*          int j = i;

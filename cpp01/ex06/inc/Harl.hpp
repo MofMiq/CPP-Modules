@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:45:48 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/13 11:48:09 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/14 11:40:11 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ class Harl {
         void warning(void);
         void error(void);
 };
+
+    int levelToInt(std::string level);
 
 #endif
