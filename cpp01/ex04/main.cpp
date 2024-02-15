@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:33:05 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/15 10:35:22 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/15 13:11:24 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void replace(std::string filename, std::string oldStr, std::string newStr)
     std::ifstream infile(filename);
     std::string line;
 
-    (void)oldStr;
-    (void)newStr;
     if (infile.is_open() == false)
     {
         std::cout << "Error while opening the infile" << std::endl;
@@ -50,7 +48,7 @@ void replace(std::string filename, std::string oldStr, std::string newStr)
             if (i != std::string::npos)
             {
                 line = line.substr(0, i) + newStr + line.substr(i + oldStr.length());
-                i = 0;
+                i += oldStr.length();
             }
         }
         outfile << line << std::endl;
