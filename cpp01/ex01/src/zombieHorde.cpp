@@ -6,12 +6,11 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:57:50 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/08 11:39:30 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:23:50 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Zombie.hpp"
-#include <iostream>
 
 /* si quisiesemos usar un constructor parametrizado con un array de objetos
 para asi inicializarloscon valores especificos, tendremos que alojar memoria
@@ -35,7 +34,7 @@ si no se hace correctamtene.
 Zombie *zombieHorde(int N, std::string name)
 {
     int i = 0;
-    Zombie* horde = new Zombie[N];  //constructor defaut para cuando queremos crear un objeto de una sola tacada
+    Zombie* horde = new Zombie[N];  //constructor defaut para cuando queremos crear un array de objetos de una sola tacada
 
     while (i < N)
     {

@@ -6,12 +6,11 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 13:36:21 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/09 13:44:44 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:26:28 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/HumanA.hpp"
-#include <iostream>
 
 HumanA::HumanA(std::string initName, Weapon &initWeapon) : name(initName), weapon(initWeapon)
 {

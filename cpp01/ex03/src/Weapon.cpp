@@ -6,12 +6,11 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:59:25 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/08 16:26:21 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:26:41 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Weapon.hpp"
-#include <iostream>
 
 Weapon::Weapon(std::string weaponArmed) : type(weaponArmed)
 {

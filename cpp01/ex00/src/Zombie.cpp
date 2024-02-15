@@ -6,12 +6,10 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 13:48:17 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/07 16:11:04 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:21:52 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Zombie.hpp"
-#include <iostream>
 #include "../inc/Zombie.hpp"
 
 Zombie::Zombie(std::string initName)

@@ -6,11 +6,10 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 13:06:42 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/09 14:04:42 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:27:29 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Weapon.hpp"
 #include "../inc/HumanA.hpp"
 #include "../inc/HumanB.hpp"
 

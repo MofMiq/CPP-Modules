@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:33:05 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/09 16:35:57 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:35:22 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ void replace(std::string filename, std::string oldStr, std::string newStr)
     if (infile.is_open() == false)
     {
         std::cout << "Error while opening the infile" << std::endl;
+        return ;
+    }
+
+    if (infile.peek() == std::ifstream::traits_type::eof())
+    {
+        std::cout << "Error: the file is empty" << std::endl;
         return ;
     }
 
@@ -52,7 +58,6 @@ void replace(std::string filename, std::string oldStr, std::string newStr)
     
     outfile.close();
     infile.close();
-    std::cout << "Archivo copiado" << std::endl;
     return ;
 }
 
