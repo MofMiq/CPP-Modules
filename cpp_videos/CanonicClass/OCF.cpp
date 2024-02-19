@@ -30,7 +30,7 @@ MyClass& MyClass::operator=(const MyClass& other)
     std::cout << "Operador de asignacion de copia called" << std::endl;
     if (this != &other)
     {
-        this->_foo = other.getFoo(); ///WTF?!
+        this->_foo = other.getFoo();
     }
     return *this;
 }
