@@ -6,7 +6,7 @@
 /*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:55:05 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/21 18:53:45 by hunter           ###   ########.fr       */
+/*   Updated: 2024/02/21 16:43:52 by hunter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ Fixed Fixed::operator/(const Fixed &rhs) const
 {
     if (rhs._i == 0)
     {
-        std::cout << "Invalid number for a division" << std::endl;;
+        std::cout << "Invalid number for a divition" << std::endl;;
         return 0;
     }
     return Fixed(this->toFloat() / rhs.toFloat());
