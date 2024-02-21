@@ -6,7 +6,7 @@
 /*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:59:04 by hunter            #+#    #+#             */
-/*   Updated: 2024/02/21 18:05:07 by hunter           ###   ########.fr       */
+/*   Updated: 2024/02/21 21:04:35 by hunter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@ class Point {
         ~Point();
     
         Point& operator=(const Point& rhs);
+        bool operator==(const Point& rhs) const;
 
-        const Fixed getX(void) const;
-        const Fixed getY(void) const;
-        void setX(const Fixed x);
-        void setY(const Fixed y);
+        Fixed getX(void) const;
+        Fixed getY(void) const;
 
     private:
         const Fixed _x;
