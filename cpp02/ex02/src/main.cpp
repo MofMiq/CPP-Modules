@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:31:27 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/20 19:02:06 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/20 19:06:58 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int main(void)
 {
     Fixed   a;
     Fixed   const b(Fixed(5.05f) * Fixed(2));
-    //Fixed   res(b / a);
-    //std::cout << res << std::endl;
+    Fixed   res(b / a);
+    std::cout << res << std::endl;
     //const Fixed   c(Fixed(8) + b);
 
 

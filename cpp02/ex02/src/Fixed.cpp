@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:55:05 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/20 19:00:32 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/20 19:07:44 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ Fixed Fixed::operator/(const Fixed &rhs) const
     if (rhs._i == 0)
     {
         std::cout << "Invalid number for a divition" << std::endl;;
-        std::exit(1); //puedo usar esto?
+        return 0;
     }
     return Fixed(this->toFloat() / rhs.toFloat());
 }
