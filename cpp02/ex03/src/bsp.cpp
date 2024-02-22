@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 17:51:59 by hunter            #+#    #+#             */
-/*   Updated: 2024/02/21 21:10:49 by hunter           ###   ########.fr       */
+/*   Created: 2024/02/21 17:51:59 by marirodr          #+#    #+#             */
+/*   Updated: 2024/02/22 13:20:12 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Point.hpp"
+
+bool checkDiagonalLine(const Point& a, const Point& b, const Point& p);
+bool checkStraightLine(const Point& a, const Point& b, const Point& p);
+bool checkVertexEdges(const Point& a, const Point& b, const Point& c, const Point& p);
 
 Fixed abs(Fixed& nb)
 {
@@ -48,13 +52,8 @@ bool bsp(const Point a, const Point b, const Point c, const Point point)
     areaABP = triangleArea(a, b, point);
     areaACP = triangleArea(a, c, point);
     areaBCP = triangleArea(b, c, point);
-
-    std::cout << "AreaABC: " << areaABC << std::endl;
-    std::cout << "AreaABP: " << areaABP << std::endl;
-    std::cout << "AreaACP: " << areaACP << std::endl;
-    std::cout << "AreaBCP: " << areaBCP << std::endl;
     
-    if (a == point || b == point || c == point)
+    if (!checkVertexEdges(a, b, c, point))
         return false;
     if (areaABC == (areaABP + areaACP + areaBCP))
         return true;

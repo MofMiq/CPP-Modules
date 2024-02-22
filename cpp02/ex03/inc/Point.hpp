@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 16:59:04 by hunter            #+#    #+#             */
-/*   Updated: 2024/02/21 21:04:35 by hunter           ###   ########.fr       */
+/*   Created: 2024/02/21 16:59:04 by marirodr          #+#    #+#             */
+/*   Updated: 2024/02/22 13:21:44 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ class Point {
         const Fixed _x;
         const Fixed _y;
 };
+
+std::ostream& operator<<(std::ostream& o, const Point& obj);
 
 #endif

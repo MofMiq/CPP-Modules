@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hunter <hunter@student.42.fr>              +#+  +:+       +#+         #
+#    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/19 15:51:53 by marirodr          #+#    #+#              #
-#    Updated: 2024/02/21 20:05:45 by hunter           ###   ########.fr        #
+#    Updated: 2024/02/22 13:20:27 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC		=	src/main.cpp \
 			src/Fixed.cpp \
 			src/Point.cpp \
 			src/bsp.cpp \
+			src/check.cpp \
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 

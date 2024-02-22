@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:55:05 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/21 16:43:52 by hunter           ###   ########.fr       */
+/*   Updated: 2024/02/22 13:17:37 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,29 @@
 
 Fixed::Fixed() : _i(0)
 {
-    //std::cout << "\033[32m" << "Default constructor called" << "\033[0m" << std::endl;
     return;
 }
 
 Fixed::Fixed(const int i)
 {
-    //std::cout << "\033[32m" << "Int constructor called" << "\033[0m" << std::endl;
     this->_i = i << this->_f;
-    //std::cout << this->_i << std::endl;
     return;
 }
 
 Fixed::Fixed(const float f)
 {
-    //std::cout << "\033[32m" << "Float constructor called" << "\033[0m" << std::endl;
     this->_i = roundf(f * (1 << this->_f));
-    //std::cout << this->_i << std::endl;
     return;
 }
 
 Fixed::Fixed(const Fixed& rhs)
 {
-    //std::cout << "\033[32m" << "Copy constructor called" << "\033[0m" << std::endl;
     *this = rhs;
     return;
 }
 
 Fixed::~Fixed()
 {
-    //std::cout << "\033[31m" << "Destructor called" << "\033[0m" << std::endl;
     return;
 }
 
@@ -80,7 +73,6 @@ bool Fixed::operator!=(const Fixed &rhs) const
 
 Fixed &Fixed::operator=(const Fixed& rhs)
 {
-    //std::cout << "\033[32m" << "Copy assignment operator called" << "\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_i = rhs.getRawBits();
@@ -106,10 +98,7 @@ Fixed Fixed::operator*(const Fixed &rhs) const
 Fixed Fixed::operator/(const Fixed &rhs) const
 {
     if (rhs._i == 0)
-    {
-        std::cout << "Invalid number for a divition" << std::endl;;
         return 0;
-    }
     return Fixed(this->toFloat() / rhs.toFloat());
 }
 
