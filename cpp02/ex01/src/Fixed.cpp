@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:55:05 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/20 10:51:38 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/22 14:11:01 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ Fixed::Fixed() : _i(0)
 Fixed::Fixed(const int i)
 {
     std::cout << "\033[32m" << "Int constructor called" << "\033[0m" << std::endl;
-    //this->_i = i * (1 << this->_f); // es lo mismo que desplzaar los bits directamente
     this->_i = i << this->_f;
     std::cout << this->_i << std::endl;
     return;
@@ -74,13 +73,11 @@ Fixed &Fixed::operator=(const Fixed& rhs)
 
 int Fixed::getRawBits(void) const
 {
-    //std::cout << "getRawBits member function called" << std::endl;
     return this->_i;
 }
 
 void Fixed::setRawBits(const int raw)
 {
-    //std::cout << "setRawBits member function called" << std::endl;
     this->_i = raw;
     return;
 }
