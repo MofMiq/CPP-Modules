@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 13:13:31 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/26 18:05:55 by marirodr         ###   ########.fr       */
+/*   Created: 2024/02/23 12:41:04 by marirodr          #+#    #+#             */
+/*   Updated: 2024/02/26 18:09:57 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAV_TRAP_H
+# define SCAV_TRAP_H
+
+#include <iostream>
 #include "../inc/ClapTrap.hpp"
-#include "../inc/ScavTrap.hpp"
 
-int main(void)
-{
-    ClapTrap Bob("Bob");
-    ScavTrap Jim("Jim");
+class ScavTrap : public ClapTrap {
+    public:
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap& rhs);
+        ~ScavTrap();
 
-    std::cout << Bob << Jim << std::endl;
-    Bob.attack(Jim.getName());
-    Jim.takeDamage(Bob.getAttackDamage());
-    Jim.attack(Bob.getName());
-    Bob.takeDamage(Jim.getAttackDamage());
-    Bob.beRepaired(2);
-    Jim.beRepaired(1);
-    Jim.guardGate();
-    std::cout << std::endl << Bob << Jim << std::endl;
+        ScavTrap& operator=(const ScavTrap& rhs);
 
-    return 0;
-}
+        void guardGate();
+
+        void attack(const std::string& target);
+};
+
+std::ostream& operator<<(std::ostream& o, const ScavTrap& obj);
+
+#endif

@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 13:13:31 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/26 18:05:55 by marirodr         ###   ########.fr       */
+/*   Created: 2024/02/23 12:41:04 by marirodr          #+#    #+#             */
+/*   Updated: 2024/02/26 18:10:08 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAG_TRAP_H
+# define FRAG_TRAP_H
+
+#include <iostream>
 #include "../inc/ClapTrap.hpp"
-#include "../inc/ScavTrap.hpp"
 
-int main(void)
-{
-    ClapTrap Bob("Bob");
-    ScavTrap Jim("Jim");
+class FragTrap : public ClapTrap {
+    public:
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap(const FragTrap& rhs);
+        ~FragTrap();
 
-    std::cout << Bob << Jim << std::endl;
-    Bob.attack(Jim.getName());
-    Jim.takeDamage(Bob.getAttackDamage());
-    Jim.attack(Bob.getName());
-    Bob.takeDamage(Jim.getAttackDamage());
-    Bob.beRepaired(2);
-    Jim.beRepaired(1);
-    Jim.guardGate();
-    std::cout << std::endl << Bob << Jim << std::endl;
+        FragTrap& operator=(const FragTrap& rhs);
 
-    return 0;
-}
+        void highFivesGuys();
+};
+
+std::ostream& operator<<(std::ostream& o, const FragTrap& obj);
+
+#endif
