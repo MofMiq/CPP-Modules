@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 13:13:31 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/26 18:07:07 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:15:11 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@
 
 int main(void)
 {
-    ClapTrap Bob("Bob");
-    ScavTrap Jim("Jim");
-    FragTrap Adam("Adam");
+    ClapTrap Ironclad("Ironclad");
+    ScavTrap Silent("Silent");
+    FragTrap Defect("Defect");
 
-    std::cout << Bob << Jim << Adam << std::endl;
-    Bob.attack(Jim.getName());
-    Jim.takeDamage(Bob.getAttackDamage());
+    std::cout << Ironclad << Silent << Defect << std::endl;
+    Ironclad.attack(Silent.getName());
+    Silent.takeDamage(Ironclad.getAttackDamage());
     
-    Jim.attack(Bob.getName());
-    Bob.takeDamage(Jim.getAttackDamage());
+    Silent.attack(Ironclad.getName());
+    Ironclad.takeDamage(Silent.getAttackDamage());
     
-    Adam.attack(Jim.getName());
-    Jim.takeDamage(Adam.getAttackDamage());
+    Defect.attack(Silent.getName());
+    Silent.takeDamage(Defect.getAttackDamage());
 
-    Bob.beRepaired(2);
-    Jim.beRepaired(1);
-    Adam.beRepaired(5);
-    Adam.highFivesGuys();
-    std::cout << std::endl << Bob << Jim << Adam << std::endl;
+    Ironclad.beRepaired(2);
+    Silent.beRepaired(1);
+    Defect.beRepaired(5);
+    Defect.highFivesGuys();
+    std::cout << std::endl << Ironclad << Silent << Defect << std::endl;
 
     return 0;
 }

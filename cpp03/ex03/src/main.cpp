@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 13:13:31 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/28 12:50:15 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:15:58 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@
 
 int main(void)
 {
-    ScavTrap Jim("Jim");
-    FragTrap Adam("Adam");
-    DiamondTrap Jack("Jack");
+    ScavTrap Silent("Silent");
+    FragTrap Defect("Defect");
+    DiamondTrap Watcher("Watcher");
 
-    std::cout << Jim << Adam << Jack << std::endl;
-    Jack.attack(Jim.getName());
-    Jim.takeDamage(Jack.getAttackDamage());
+    std::cout << Silent << Defect << Watcher << std::endl;
+    Watcher.attack(Silent.getName());
+    Silent.takeDamage(Watcher.getAttackDamage());
 
-    Jim.beRepaired(1);
-    Adam.beRepaired(5);
-    Jack.beRepaired(2);
+    Silent.beRepaired(1);
+    Defect.beRepaired(5);
+    Watcher.beRepaired(2);
 
-    Jack.whoAmI();
-    Jack.guardGate();
-    Jack.highFivesGuys();
-    std::cout << std::endl << Jim << Adam << Jack << std::endl;
+    Watcher.whoAmI();
+    Watcher.guardGate();
+    Watcher.highFivesGuys();
+    std::cout << std::endl << Silent << Defect << Watcher << std::endl;
 
     return 0;
 }
