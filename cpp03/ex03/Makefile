@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 12:41:13 by marirodr          #+#    #+#              #
-#    Updated: 2024/02/26 18:08:41 by marirodr         ###   ########.fr        #
+#    Updated: 2024/02/27 11:14:24 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC		=	src/main.cpp \
 			src/ClapTrap.cpp \
 			src/ScavTrap.cpp \
 			src/FragTrap.cpp \
-			src/DiamondTrapTrap.cpp \
+			src/DiamondTrap.cpp \
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 

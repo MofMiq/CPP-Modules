@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:41:04 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/23 13:18:32 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/27 10:28:38 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 class ClapTrap {
-    private:
+    protected:
         std::string _name;
         int         _hitPoints;
         int         _energyPoints;

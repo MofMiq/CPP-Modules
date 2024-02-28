@@ -6,35 +6,33 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 13:13:31 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/26 18:07:07 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:50:15 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
 #include "../inc/ScavTrap.hpp"
 #include "../inc/FragTrap.hpp"
+#include "../inc/DiamondTrap.hpp"
 
 int main(void)
 {
-    ClapTrap Bob("Bob");
     ScavTrap Jim("Jim");
     FragTrap Adam("Adam");
+    DiamondTrap Jack("Jack");
 
-    std::cout << Bob << Jim << Adam << std::endl;
-    Bob.attack(Jim.getName());
-    Jim.takeDamage(Bob.getAttackDamage());
-    
-    Jim.attack(Bob.getName());
-    Bob.takeDamage(Jim.getAttackDamage());
-    
-    Adam.attack(Jim.getName());
-    Jim.takeDamage(Adam.getAttackDamage());
+    std::cout << Jim << Adam << Jack << std::endl;
+    Jack.attack(Jim.getName());
+    Jim.takeDamage(Jack.getAttackDamage());
 
-    Bob.beRepaired(2);
     Jim.beRepaired(1);
     Adam.beRepaired(5);
-    Adam.highFivesGuys();
-    std::cout << std::endl << Bob << Jim << Adam << std::endl;
+    Jack.beRepaired(2);
+
+    Jack.whoAmI();
+    Jack.guardGate();
+    Jack.highFivesGuys();
+    std::cout << std::endl << Jim << Adam << Jack << std::endl;
 
     return 0;
 }

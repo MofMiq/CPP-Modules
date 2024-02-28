@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:41:04 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/26 18:09:42 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:00:10 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 #include <iostream>
 #include "../inc/ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
+    protected:
+        static const int _scavEnergy = 50; //esta variable es para poder solucionar el Diamond Problem
     public:
         ScavTrap();
         ScavTrap(std::string name);

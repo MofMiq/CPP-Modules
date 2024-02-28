@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:41:04 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/26 18:10:08 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:34:57 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 #include <iostream>
 #include "../inc/ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+/* La herencia virtual es una característica de C++ que se utiliza para evitar
+múltiples instancias de una clase base cuando se utiliza la herencia múltiple. */
+
+class FragTrap : virtual public ClapTrap {
     public:
         FragTrap();
         FragTrap(std::string name);
