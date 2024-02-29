@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:03:56 by marirodr          #+#    #+#              #
-#    Updated: 2024/02/29 13:47:03 by marirodr         ###   ########.fr        #
+#    Updated: 2024/02/29 14:11:01 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC		=	src/main.cpp \
 			src/Cat.cpp \
 			src/WrongAnimal.cpp \
 			src/WrongCat.cpp \
+			src/Brain.cpp \
 
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))

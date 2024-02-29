@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:53:32 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 13:36:42 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:40:34 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,22 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    Animal* array[10];
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    std::cout << meta->getType() << " " << std::endl;
-    j->makeSound();
-    i->makeSound();
-    meta->makeSound();
+    for (int i = 0; i < 10; i++)
+    {
+        if (i < 5)
+            array[i] = new Dog;
+        else
+            array[i] = new Cat;
+    }
 
-    delete meta;
-    delete j;
-    delete i;
+    /*una expresion como esta: delete [] array; solo funciona cuando el array se ha creado con new[]*/
     
-    //----------------------
+    array[2]->makeSound();
+    array[7]->makeSound();
 
-    const WrongAnimal* wmeta = new WrongAnimal;
-    const WrongAnimal* wi = new WrongCat;
-
-    std::cout << wi->getType() << " " << std::endl;
-    std::cout << wmeta->getType() << " " << std::endl;
-    wi->makeSound();
-    wmeta->makeSound();
-
-    delete wmeta;
-    delete wi;
-
+    for (int i = 0; i < 10; i++)
+        delete array[i];
     return 0;
 }

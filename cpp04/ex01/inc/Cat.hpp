@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:28:23 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 13:23:26 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:13:52 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 # define CAT_H
 
 #include "../inc/Animal.hpp"
+#include "../inc/Brain.hpp"
 
 class Cat : public Animal {
+    private:
+        Brain* _brain;
     public:
         Cat();
         Cat(const Cat& rhs);
