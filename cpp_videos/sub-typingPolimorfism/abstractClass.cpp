@@ -32,7 +32,11 @@ void Warrior::attack(const std::string& target)
 }
 
 /*Interface: no pueden tener atributos(variables), solo metodos.
-tienen que tener una funcion pura para ser abstractas.*/
+tienen que tener una funcion pura para ser abstractas. Las interfaces
+se usan cuando queremos definir "comportamientos" pero no sabemos que
+tipo de paramatros recibimos o devolvemos?.una interfaz tambien sirve para
+manipular un array con tipos de datos diferentes pero eso mejor para mas
+adelante.*/
 
 class ICoffeeMaker
 {
