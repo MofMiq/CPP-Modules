@@ -6,13 +6,13 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:49:52 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 19:03:33 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:09:34 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
     std::cout << "\033[32mCat default constructor called\033[0m" << std::endl;
     this->_type = "Cat";
@@ -20,7 +20,7 @@ Cat::Cat() : Animal()
     return;
 }
 
-Cat::Cat(const Cat& rhs) : Animal()
+Cat::Cat(const Cat& rhs) : AAnimal()
 {
     std::cout << "\033[32mCat copy constructor called\033[0m" << std::endl;
     *this = rhs;

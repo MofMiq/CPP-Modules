@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:48:06 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 14:19:14 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:03:39 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog() : Animal()
     return;
 }
 
-Dog::Dog(const Dog& rhs)
+Dog::Dog(const Dog& rhs) : Animal()
 {
     std::cout << "\033[32mDog copy constructor called\033[0m" << std::endl;
     *this = rhs;
@@ -40,6 +40,7 @@ Dog& Dog::operator=(const Dog& rhs)
     if (this != &rhs)
     {
         this->_type = rhs.getType();
+        this->_brain = new Brain(*rhs._brain);
     }
     return *this;
 }

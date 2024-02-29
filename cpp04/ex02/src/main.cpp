@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:53:32 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 15:55:20 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:40:01 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,30 @@
 
 int main()
 {
-    Animal* animals[10];
+    const AAnimal* dog = new Dog();
+    const AAnimal* cat = new Cat();
+    const Dog* dog2;
+    const Cat* cat2;
 
-    for (int i = 0; i < 10; i++)
-    {
-        if (i < 5)
-            animals[i] = new Dog;
-        else
-            animals[i] = new Cat;
-    }
+    dog2 = new Dog();
+    cat2 = new Cat();
 
-    for (int i = 0; i < 10; i++)
-        animals[i]->makeSound();
+    std::cout << dog->getType() << " " << std::endl;
+    std::cout << cat->getType() << " " << std::endl;
+    std::cout << dog2->getType() << " " << std::endl;
+    std::cout << cat2->getType() << " " << std::endl;
+    dog->makeSound();
+    cat->makeSound();
+    dog2->makeSound();
+    cat2->makeSound();
 
-    /*una expresion como esta: delete [] animals; solo funciona cuando el array se ha creado con new[]*/
-    for (int i = 0; i < 10; i++)
-        delete animals[i];
+    delete dog;
+    delete cat;
+    delete dog2;
+    delete cat2;
+
+    //Esto seria una prueba de error para comprobar que es una clase abstracta
+    //const AAnimal* animal = new AAnimal();
+
     return 0;
 }

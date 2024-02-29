@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 12:49:52 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 19:03:33 by marirodr         ###   ########.fr       */
+/*   Created: 2024/02/29 12:48:06 by marirodr          #+#    #+#             */
+/*   Updated: 2024/02/29 19:09:40 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Cat.hpp"
+#include "../inc/Dog.hpp"
 
-Cat::Cat() : Animal()
+Dog::Dog() : AAnimal()
 {
-    std::cout << "\033[32mCat default constructor called\033[0m" << std::endl;
-    this->_type = "Cat";
+    std::cout << "\033[32mDog default constructor called\033[0m" << std::endl;
+    this->_type = "Dog";
     this->_brain = new Brain();
     return;
 }
 
-Cat::Cat(const Cat& rhs) : Animal()
+Dog::Dog(const Dog& rhs) : AAnimal()
 {
-    std::cout << "\033[32mCat copy constructor called\033[0m" << std::endl;
+    std::cout << "\033[32mDog copy constructor called\033[0m" << std::endl;
     *this = rhs;
     return;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
     delete this->_brain;
-    std::cout << "\033[31mCat Destructor called\033[0m" << std::endl;
+    std::cout << "\033[31mDog Destructor called\033[0m" << std::endl;
     return;
 }
 
-Cat& Cat::operator=(const Cat& rhs)
+Dog& Dog::operator=(const Dog& rhs)
 {
-    std::cout << "\033[32mCat copy assignment operator called\033[0m" << std::endl;
+    std::cout << "\033[32mDog copy assignment operator called\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_type = rhs.getType();
@@ -45,8 +45,8 @@ Cat& Cat::operator=(const Cat& rhs)
     return *this;
 }
 
-void Cat::makeSound(void) const
+void Dog::makeSound(void) const
 {
-    std::cout << "\033[33m*Miau miau!!!*\033[0m" << std::endl;
+    std::cout << "\033[33m*Guau guau!!!*\033[0m" << std::endl;
     return ;
 }

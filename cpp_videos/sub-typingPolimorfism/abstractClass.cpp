@@ -12,21 +12,49 @@ class ACharacter {
     private:
         std::string _name;
     public:
+        ACharacter();
+        ~ACharacter();
         virtual void attack(const std::string& target) = 0; //funcion pura
         void sayHello(const std::string& target);
 };
 
 class Warrior : public ACharacter {
     public:
+        Warrior();
+        ~Warrior();
         virtual void attack(const std::string& target);
 };
 
-void ACharacter::sayHello(const std::string& target)
+ACharacter::ACharacter()
+{
+    std::cout << "ACharacter constructor called" << std::endl;
+    return;
+}
+
+ACharacter::~ACharacter()
+{
+    std::cout << "ACharacter destructor called" << std::endl;
+    return;
+}
+
+
+void ACharacter::sayHello(const std::string &target)
 {
     std::cout << "Hello " << target << " !" << std::endl;
 }
 
-void Warrior::attack(const std::string& target)
+Warrior::Warrior() : ACharacter()
+{
+    std::cout << "Warrior constructor called" << std::endl;
+    return;
+}
+Warrior::~Warrior()
+{
+    std::cout << "Warrior destructor called" << std::endl;
+    return;
+}
+
+void Warrior::attack(const std::string &target)
 {
     std::cout << "*attacks " << target << " with a sword*" << std::endl;
 }
@@ -38,13 +66,13 @@ tipo de paramatros recibimos o devolvemos?.una interfaz tambien sirve para
 manipular un array con tipos de datos diferentes pero eso mejor para mas
 adelante.*/
 
-class ICoffeeMaker
+/* class ICoffeeMaker
 {
     public:
         virtual void fillWaterTank(IWaterSource* src) = 0;
         virtual ICoffee* makeCoffee(const std::string& type) = 0;
 };
-
+ */
 int main()
 {
     ACharacter* a = new Warrior();

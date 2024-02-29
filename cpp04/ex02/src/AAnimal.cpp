@@ -1,45 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:31:27 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 18:41:52 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:10:31 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Brain.hpp"
+#include "../inc/AAnimal.hpp"
 
-Brain::Brain()
+AAnimal::AAnimal() : _type("AAnimal")
 {
-    std::cout << "\033[32mBrain default constructor called\033[0m" << std::endl;
-    for (int i = 0; i < 0; i++)
-        this->ideas[i] = "";
+    std::cout << "\033[32mAAnimal default constructor called\033[0m" << std::endl;
     return;
 }
 
-Brain::Brain(const Brain& rhs)
+AAnimal::AAnimal(const AAnimal& rhs)
 {
-    std::cout << "\033[32mBrain copy constructor called\033[0m" << std::endl;
+    std::cout << "\033[32mAAnimal copy constructor called\033[0m" << std::endl;
     *this = rhs;
     return;
 }
 
-Brain::~Brain()
+AAnimal::~AAnimal()
 {
-    std::cout << "\033[31mBrain Destructor called\033[0m" << std::endl;
+    std::cout << "\033[31mAAnimal Destructor called\033[0m" << std::endl;
     return;
 }
 
-Brain& Brain::operator=(const Brain& rhs)
+AAnimal& AAnimal::operator=(const AAnimal& rhs)
 {
-    std::cout << "\033[32mBrain copy assignment operator called\033[0m" << std::endl;
+    std::cout << "\033[32mAAnimal copy assignment operator called\033[0m" << std::endl;
     if (this != &rhs)
     {
-        for (int i = 0; i < 100; i++)
-            this->ideas[i] = rhs.ideas[i];
+        this->_type = rhs.getType();
     }
     return *this;
+}
+
+std::string AAnimal::getType(void) const
+{
+    return this->_type;
+}
+
+void AAnimal::setType(std::string newType)
+{
+    this->_type = newType;
+    return;
 }

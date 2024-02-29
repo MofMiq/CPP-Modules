@@ -1,51 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:49:52 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 19:03:33 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/02/29 13:27:49 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Cat.hpp"
+#include "../inc/WrongCat.hpp"
 
-Cat::Cat() : Animal()
+WrongCat::WrongCat() : WrongAnimal()
 {
-    std::cout << "\033[32mCat default constructor called\033[0m" << std::endl;
-    this->_type = "Cat";
-    this->_brain = new Brain();
+    std::cout << "\033[32mWrongCat default constructor called\033[0m" << std::endl;
+    this->_type = "WrongCat";
     return;
 }
 
-Cat::Cat(const Cat& rhs) : Animal()
+WrongCat::WrongCat(const WrongCat& rhs)
 {
-    std::cout << "\033[32mCat copy constructor called\033[0m" << std::endl;
+    std::cout << "\033[32mWrongCat copy constructor called\033[0m" << std::endl;
     *this = rhs;
     return;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-    delete this->_brain;
-    std::cout << "\033[31mCat Destructor called\033[0m" << std::endl;
+    std::cout << "\033[31mWrongCat Destructor called\033[0m" << std::endl;
     return;
 }
 
-Cat& Cat::operator=(const Cat& rhs)
+WrongCat& WrongCat::operator=(const WrongCat& rhs)
 {
-    std::cout << "\033[32mCat copy assignment operator called\033[0m" << std::endl;
+    std::cout << "\033[32mWrongCat copy assignment operator called\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_type = rhs.getType();
-        this->_brain = new Brain(*rhs._brain);
     }
     return *this;
 }
 
-void Cat::makeSound(void) const
+void WrongCat::makeSound(void) const
 {
     std::cout << "\033[33m*Miau miau!!!*\033[0m" << std::endl;
     return ;
