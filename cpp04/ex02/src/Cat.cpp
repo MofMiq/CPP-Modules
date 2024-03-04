@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:49:52 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 19:09:34 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/04 11:07:51 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,21 @@ Cat::~Cat()
     return;
 }
 
+ /*copia profunda: implica copiar todos los recursos de un objeto, incluyendo cualquier
+ recurso de memoria dinamica al que apunte. Esto es diferente de una copia superficial,
+ que solo copia los valores de los miembros del objeto, lo que puede llevar a multiples
+ punteros apuntando al mismo recurso.
+ 1) se desreferencia el puntero _brain del objeto rhs, obteniendo el objeto Brain al que apunta.
+ 2) crea una nueva  
+ */
+
 Cat& Cat::operator=(const Cat& rhs)
 {
     std::cout << "\033[32mCat copy assignment operator called\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_type = rhs.getType();
-        this->_brain = new Brain(*rhs._brain);
+        this->_brain = new Brain(*rhs._brain); //copia profunda
     }
     return *this;
 }

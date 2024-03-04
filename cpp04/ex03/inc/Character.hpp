@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 11:08:01 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/04 17:56:58 by marirodr         ###   ########.fr       */
+/*   Created: 2024/03/04 13:12:28 by marirodr          #+#    #+#             */
+/*   Updated: 2024/03/04 17:31:05 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-# define BRAIN_H
+#ifndef CHARACTER_H
+# define CHARACTER_H
 
-#include <iostream>
+#include "../inc/ICharacter.hpp"
 
-class Brain {
-    protected:
-        std::string ideas[100];
+class Character : public ICharacter {
+    private:
+        std::string _name;
     public:
-        Brain();
-        Brain(const Brain& rhs);
-        ~Brain();
+        Character(const std::string name);
+        Character(const Character& rhs);
+        ~Character();
 
-        Brain& operator=(const Brain& rhs);
+        Character& operator=(const Character& rhs);
+
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:31:27 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 18:41:52 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:06:09 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Brain::Brain()
 {
     std::cout << "\033[32mBrain default constructor called\033[0m" << std::endl;
-    for (int i = 0; i < 0; i++)
+    for (int i = 0; i < 100; i++)
         this->ideas[i] = "";
     return;
 }

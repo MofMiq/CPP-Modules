@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:08:01 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 14:18:28 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:03:07 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Brain {
     public:
         Brain();
         Brain(const Brain& rhs);
-        /* virtual  */~Brain();
+        ~Brain();
 
         Brain& operator=(const Brain& rhs);
 };
