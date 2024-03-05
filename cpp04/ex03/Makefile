@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
+#    By: hunter <hunter@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:03:56 by marirodr          #+#    #+#              #
-#    Updated: 2024/03/04 13:47:46 by marirodr         ###   ########.fr        #
+#    Updated: 2024/03/05 19:45:31 by hunter           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Materia
+NAME	=	materia
 
 CC		=	c++
 
@@ -20,8 +20,8 @@ SRC		=	src/main.cpp \
 			src/AMateria.cpp \
 			src/Cure.cpp \
 			src/Ice.cpp \
-#			src/ICharacter.cpp \
-			src/IMateriaSource.cpp \
+			src/Character.cpp \
+			src/MateriaSource.cpp \
 
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))

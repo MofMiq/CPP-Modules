@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:25:36 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/04 14:18:46 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/05 12:55:06 by hunter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class AMateria
 {
     protected:
-        const std::string _type;
+        std::string _type;
 
     public:
         AMateria();
         AMateria(const std::string& type);
         AMateria(const AMateria& rhs);
-        ~AMateria();
+        virtual ~AMateria();
 
         AMateria& operator=(const AMateria& rhs);
 

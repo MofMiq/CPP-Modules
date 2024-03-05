@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:48:06 by marirodr          #+#    #+#             */
-/*   Updated: 2024/02/29 19:03:39 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/05 20:00:18 by hunter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Dog::Dog() : Animal()
 Dog::Dog(const Dog& rhs) : Animal()
 {
     std::cout << "\033[32mDog copy constructor called\033[0m" << std::endl;
-    *this = rhs;
+    this->_type = rhs.getType();
+    this->_brain = new Brain(*rhs._brain);
     return;
 }
 
