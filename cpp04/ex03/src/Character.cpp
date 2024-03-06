@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:23:30 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/05 19:56:11 by hunter           ###   ########.fr       */
+/*   Updated: 2024/03/06 19:23:12 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ void Character::equip(AMateria* m)
             this->_count++;
             break;
         }
-        i++;
     }
     return;
 }

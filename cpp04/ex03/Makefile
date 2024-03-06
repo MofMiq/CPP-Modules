@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hunter <hunter@student.42.fr>              +#+  +:+       +#+         #
+#    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:03:56 by marirodr          #+#    #+#              #
-#    Updated: 2024/03/05 19:45:31 by hunter           ###   ########.fr        #
+#    Updated: 2024/03/06 19:23:01 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	materia
+NAME	=	Materia
 
 CC		=	c++
 
