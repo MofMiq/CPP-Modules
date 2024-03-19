@@ -3,20 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
+#    By: hunter <hunter@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:03:56 by marirodr          #+#    #+#              #
-#    Updated: 2024/03/13 13:27:49 by marirodr         ###   ########.fr        #
+#    Updated: 2024/03/19 12:03:27 by hunter           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Materia
+NAME	=	Form
 
 CC		=	c++
 
 CFLAGS	=	-std=c++98 -Wall -Werror -Wextra
 
 SRC		=	src/main.cpp \
+			src/Bureaucrat.cpp \
+			src/Form.cpp \
 
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
