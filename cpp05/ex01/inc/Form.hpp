@@ -23,6 +23,8 @@ class Form
         int getGradeReq() const;
         int getGradeExec() const;
 
+        void setSign(bool status);
+
         bool beSigned(const Bureaucrat& b);
 
         class GradeTooHighException

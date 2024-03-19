@@ -73,6 +73,11 @@ int Form::getGradeExec() const
     return this->_gradeExecution;
 }
 
+void Form::setSign(bool status)
+{
+    this->_isSigned = status;
+}
+
 bool Form::beSigned(const Bureaucrat &b)
 {
     try
@@ -83,7 +88,7 @@ bool Form::beSigned(const Bureaucrat &b)
             throw GradeTooLowException();
         else if (this->_gradeRequired < b.getGrade())
             return false;
-        this->_isSigned = true;
+        this->setSign(true);
     }
     catch (const GradeTooHighException& e)
     {
