@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:03:56 by marirodr          #+#    #+#              #
-#    Updated: 2024/03/20 14:29:14 by marirodr         ###   ########.fr        #
+#    Updated: 2024/03/20 18:54:53 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC		=	src/main.cpp \
 			src/PresidentialPardonForm.cpp \
 			src/RobotomyRequestForm.cpp \
 			src/ShrubberyCreationForm.cpp \
+			src/Intern.cpp \
 
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))

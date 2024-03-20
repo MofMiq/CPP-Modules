@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:28 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 14:16:35 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/20 18:54:29 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,17 @@
 #include "../inc/PresidentialPardonForm.hpp"
 #include "../inc/RobotomyRequestForm.hpp"
 #include "../inc/ShrubberyCreationForm.hpp"
+#include "../inc/Intern.hpp"
+#include "../inc/AForm.hpp"
 
 int main()
 {
-    Bureaucrat  bob("Bob", 42);
-    Bureaucrat  jim("Jim", 5);
+    Intern someRandomIntern;
+    AForm* llf;
+    AForm* rrf;
 
-    PresidentialPardonForm  presi("Miles");
-    RobotomyRequestForm     robot("Miles");
-    ShrubberyCreationForm   tree("Miles");
-
-    std::cout << bob << jim;
-    bob.executeForm(presi);
-    jim.executeForm(presi);
-    bob.signForm(presi);
-    jim.signForm(presi);
-    bob.executeForm(presi);
-    jim.executeForm(presi);
-
-    jim.signForm(robot);
-    jim.executeForm(robot);
-    jim.signForm(tree);
-    jim.executeForm(tree);
+    llf = someRandomIntern.makeForm("lala", "Bender");
+    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
 
     return 0;
 }
