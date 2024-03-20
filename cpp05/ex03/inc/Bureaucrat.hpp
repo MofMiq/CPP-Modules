@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:54 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 14:29:19 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:24:14 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <exception>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -38,14 +38,15 @@ class Bureaucrat
         void        incrementGrade();
         void        decrementGrade();
 
-        void        signForm(Form& f);
+        void        signForm(AForm& f);
+        void        executeForm(const AForm& f);
 
     class GradeTooHighException : public std::exception
     {
         public:
             const char* what () const throw ()
             {
-                return "Grade is already the highest!";
+                return "\033[35mGrade is already the highest!\033[0m";
             }
     };
 
@@ -54,7 +55,7 @@ class Bureaucrat
         public:
             const char* what () const throw ()
             {
-                return "Grade is already the lowest!";
+                return "\033[35mGrade is already the lowest!\033[0m";
             }
     };
 };

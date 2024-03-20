@@ -1,22 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 14:31:30 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 14:32:05 by marirodr         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/ShrubberyCreationForm.hpp"
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
     //std::cout << "\033[32mShrubberyCreationForm default constructor called\033[0m" << std::endl;
-    this->_target = "None";
+    //this->_target = "None";
     return ;
 }
 
