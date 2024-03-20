@@ -34,7 +34,7 @@ class AForm
             public:
                 const char* what() const throw ()
                 {
-                    return "Grade of the form too high to be executed";
+                    return "\033[35mGrade of the form too high to be executed\033[0m";
                 }
         };
         class GradeTooLowException
@@ -42,7 +42,7 @@ class AForm
             public:
                 const char* what() const throw ()
                 {
-                    return "Grade too low";
+                    return "\033[35mGrade of the form too low to be executed\033[0m";
                 }
         };
         class GradeInvalidException
@@ -50,7 +50,7 @@ class AForm
             public:
                 const char* what() const throw ()
                 {
-                    return "Error: bad number: grade can't be greater than 150";
+                    return "\033[35mError: bad number: grade must be a number between 1 and 150\033[0m";
                 }
         };
         class FormNotSignedException
@@ -58,7 +58,7 @@ class AForm
             public:
                 const char* what() const throw ()
                 {
-                    return "Form can't be executed without being signed beforehand";
+                    return "\033[35mForm can't be executed without being signed beforehand\033[0m";
                 }
         };
 };

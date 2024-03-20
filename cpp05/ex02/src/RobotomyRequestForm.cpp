@@ -4,21 +4,21 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
-    std::cout << "\033[32mRobotomyRequestForm default constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mRobotomyRequestForm default constructor called\033[0m" << std::endl;
     this->_target = "None";
     return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45)
 {
-    std::cout << "\033[32mRobotomyRequestForm default constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mRobotomyRequestForm default constructor called\033[0m" << std::endl;
     this->_target = target;
     return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs) : AForm(rhs.getName(), rhs.getGradeSign(), rhs.getGradeExec())
 {
-    std::cout << "\033[32mRobotomyRequestForm copy constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mRobotomyRequestForm copy constructor called\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_target = rhs._target;
@@ -28,7 +28,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs) : AForm
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-    std::cout << "\033[31mRobotomyRequestForm destructor called\033[0m" << std::endl;
+    //std::cout << "\033[31mRobotomyRequestForm destructor called\033[0m" << std::endl;
     return;
 }
 

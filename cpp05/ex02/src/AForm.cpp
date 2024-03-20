@@ -2,13 +2,13 @@
 
 AForm::AForm() : _name("Default"), _gradeSign(75), _gradeExecution(5)
 {
-    std::cout << "\033[32mAForm default constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mAForm default constructor called\033[0m" << std::endl;
     return ;
 }
 
 AForm::AForm(const std::string name, const int gradeSign, const int gradeExec) : _name(name), _gradeSign(gradeSign), _gradeExecution(gradeExec)
 {
-    std::cout << "\033[32mAForm param constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mAForm param constructor called\033[0m" << std::endl;
     try
     {
         if (gradeSign < 1 || gradeExec < 1)
@@ -29,7 +29,7 @@ AForm::AForm(const std::string name, const int gradeSign, const int gradeExec) :
 
 AForm::AForm(const AForm &rhs) : _name(rhs.getName()), _gradeSign(rhs.getGradeSign()), _gradeExecution(rhs.getGradeExec())
 {
-    std::cout << "\033[32mAForm copy constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mAForm copy constructor called\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_isSigned = rhs.getSign();
@@ -39,13 +39,13 @@ AForm::AForm(const AForm &rhs) : _name(rhs.getName()), _gradeSign(rhs.getGradeSi
 
 AForm::~AForm()
 {
-    std::cout << "\033[31mAForm destructor called\033[0m" << std::endl;
+    //std::cout << "\033[31mAForm destructor called\033[0m" << std::endl;
     return;
 }
 
 AForm &AForm::operator=(const AForm &rhs)
 {
-    std::cout << "\033[32mAForm copy assignment operator called\033[0m" << std::endl;
+    //std::cout << "\033[32mAForm copy assignment operator called\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_isSigned = rhs.getSign();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:54 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/19 19:31:59 by hunter           ###   ########.fr       */
+/*   Updated: 2024/03/20 14:20:31 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {
-    std::cout << "\033[32mBureaucrat default constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mBureaucrat default constructor called\033[0m" << std::endl;
     return ;
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, const int grade) : _name(name)
 {
-    std::cout << "\033[32mBureaucrat param constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mBureaucrat param constructor called\033[0m" << std::endl;
     try
     {
         if (grade < 1)
@@ -44,13 +44,12 @@ Bureaucrat::Bureaucrat(const std::string &name, const int grade) : _name(name)
     return ;
 }
 
-/*El problema es que estás intentando asignar un valor a _name en el cuerpo del constructor de copia.
-Sin embargo, _name es const, por lo que solo puedes asignarle un valor en la lista de inicialización
-del constructor.*/
+/*No podemos asignar un valor a _name en el cuerpo del constructor de copia ya que es de tipo const.
+Debido a ello, solo podemos asignarle un valor en la lista de inicialización del constructor.*/
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs) : _name(rhs.getName())
 {
-    std::cout << "\033[32mBureaucrat copy constructor called\033[0m" << std::endl;
+    //std::cout << "\033[32mBureaucrat copy constructor called\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_grade = rhs.getGrade();
@@ -60,13 +59,13 @@ Bureaucrat::Bureaucrat(const Bureaucrat &rhs) : _name(rhs.getName())
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "\033[31mBureaucrat destructor called\033[0m" << std::endl;
+    //std::cout << "\033[31mBureaucrat destructor called\033[0m" << std::endl;
     return;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-    std::cout << "\033[32mBureaucrat copy assignment operator called\033[0m" << std::endl;
+    //std::cout << "\033[32mBureaucrat copy assignment operator called\033[0m" << std::endl;
     if (this != &rhs)
     {
         this->_grade = rhs.getGrade();
