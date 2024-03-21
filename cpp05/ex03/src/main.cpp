@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:28 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/21 13:42:00 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:07:59 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int main()
     AForm* rrf;
 
     llf = someRandomIntern.makeForm("lala", "Bender");
-    rrf = someRandomIntern.makeForm("PresidentialPardonForm", "Bender");
+    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+    //rrf = someRandomIntern.makeForm("ShrubberyCreationForm", "Bender");
+    //rrf = someRandomIntern.makeForm("PresidentialPardonForm", "Bender");
     std::cout << std::endl;
     bob.executeForm(*rrf);
     jim.executeForm(*rrf);
