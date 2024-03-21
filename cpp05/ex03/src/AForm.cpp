@@ -12,15 +12,11 @@ AForm::AForm(const std::string name, const int gradeSign, const int gradeExec) :
     try
     {
         if (gradeSign < 1 || gradeExec < 1)
-            throw GradeTooHighException();
+            throw GradeInvalidException();
         else if (gradeSign > 150 || gradeExec > 150)
-            throw GradeTooLowException();
+            throw GradeInvalidException();
     }
-    catch (const GradeTooHighException& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    catch (const GradeTooLowException& e)
+    catch (const GradeInvalidException& e)
     {
         std::cerr << e.what() << std::endl;
     }
@@ -87,7 +83,7 @@ bool AForm::beSigned(const Bureaucrat &b)
         else if (this->_gradeSign > 150 || this->_gradeExecution > 150)
             throw GradeInvalidException();
         else if (this->_gradeSign < b.getGrade())
-            throw GradeTooHighException();
+            throw GradeSignTooHighException();
         this->setSign(true);
     }
     catch (const GradeInvalidException& e)
@@ -95,7 +91,7 @@ bool AForm::beSigned(const Bureaucrat &b)
         std::cerr << e.what() << std::endl;
         return false;
     }
-    catch (const GradeTooHighException& e)
+    catch (const GradeSignTooHighException& e)
     {
         std::cerr << e.what() << std::endl;
         return false;
@@ -110,7 +106,7 @@ bool    AForm::execute(const Bureaucrat& b) const
         if (!this->_isSigned)
             throw FormNotSignedException();
         else if (this->_gradeExecution < b.getGrade())
-            throw GradeTooHighException();
+            throw GradeExecTooHighException();
         //this->action();
     }
     catch (const FormNotSignedException& e)
@@ -118,7 +114,7 @@ bool    AForm::execute(const Bureaucrat& b) const
         std::cerr << e.what() << std::endl;
         return false;
     }
-    catch (const GradeTooHighException& e)
+    catch (const GradeExecTooHighException& e)
     {
         std::cerr << e.what() << std::endl;
         return false;

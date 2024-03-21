@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:28 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 18:54:29 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 13:42:00 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,28 @@
 
 int main()
 {
+    Bureaucrat bob("Bob", 5);
+    Bureaucrat jim("Jim", 52);
     Intern someRandomIntern;
     AForm* llf;
     AForm* rrf;
 
     llf = someRandomIntern.makeForm("lala", "Bender");
-    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+    rrf = someRandomIntern.makeForm("PresidentialPardonForm", "Bender");
+    std::cout << std::endl;
+    bob.executeForm(*rrf);
+    jim.executeForm(*rrf);
+    std::cout << std::endl;
+    jim.signForm(*rrf);
+    bob.signForm(*rrf);
+    std::cout << std::endl;
+    bob.executeForm(*rrf);
+    jim.executeForm(*rrf);
+
+    if (llf != nullptr)
+        bob.signForm(*llf);
+
+    delete rrf;
 
     return 0;
 }

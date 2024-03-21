@@ -14,7 +14,7 @@ class AForm
         AForm();
         AForm(const std::string name, const int gradeSign, const int gradeExec);
         AForm(const AForm& rhs);
-        ~AForm();
+        virtual ~AForm();
 
         AForm&          operator=(const AForm& rhs);
 
@@ -29,12 +29,20 @@ class AForm
         bool            execute(const Bureaucrat& b) const;
         virtual void    action(void) const = 0;
 
-        class GradeTooHighException
+        class GradeExecTooHighException
         {
             public:
                 const char* what() const throw ()
                 {
                     return "\033[35mGrade of the form too high to be executed\033[0m";
+                }
+        };
+        class GradeSignTooHighException
+        {
+            public:
+                const char* what() const throw ()
+                {
+                    return "\033[35mGrade of the form too high to be signed\033[0m";
                 }
         };
         class GradeTooLowException

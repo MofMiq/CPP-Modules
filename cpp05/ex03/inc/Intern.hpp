@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:34:49 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 16:11:25 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 14:47:12 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,10 @@ class Intern
                 }
         };
 };
+
+/*Definimos una estructura DormTypes que contenga un puntero a una funcion miembro que
+va a crear un formulario y un string para el nombre. nos servira para mapear los nombres
+de los formularios a las funciones que los crean.
+Luego declaramos un array de esta estructura _formTypes[3] con el tamaño deseado*/
 
 #endif

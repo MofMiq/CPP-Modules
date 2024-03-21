@@ -6,11 +6,11 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:03:56 by marirodr          #+#    #+#              #
-#    Updated: 2024/03/20 18:54:53 by marirodr         ###   ########.fr        #
+#    Updated: 2024/03/21 10:02:30 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Form
+NAME	=	Intern
 
 CC		=	c++
 
