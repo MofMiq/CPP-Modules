@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:29:30 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 14:31:19 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:53:58 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,15 @@ class Form
 
         bool beSigned(const Bureaucrat& b);
 
-        class GradeTooHighException
+        class GradeTooHighException : public std::exception
         {
             public:
-                const char* what() const throw ()
-                {
-                    return "Error: bad number: grade can't be lower than 1";
-                }
+                const char* what() const throw ();
         };
-        class GradeTooLowException
+        class GradeTooLowException : public std::exception
         {
             public:
-                const char* what() const throw ()
-                {
-                    return "Error: bad number: grade can't be greater than 150";
-                }
+                const char* what() const throw ();
         };
 };
 

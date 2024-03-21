@@ -6,12 +6,22 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:54 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 14:29:33 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:52:51 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/Form.hpp"
+
+const char* Bureaucrat::GradeTooHighException::what() const throw ()
+{
+    return "Grade is already the highest!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw ()
+{
+    return "Grade is already the lowest!";
+}
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {

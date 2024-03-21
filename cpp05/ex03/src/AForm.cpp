@@ -1,4 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/21 18:39:15 by marirodr          #+#    #+#             */
+/*   Updated: 2024/03/21 18:43:15 by marirodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/AForm.hpp"
+
+const char* AForm::GradeExecTooHighException::what() const throw ()
+{
+    return "\033[35mGrade of the form too high to be executed\033[0m";
+}
+
+const char* AForm::GradeSignTooHighException::what() const throw ()
+{
+    return "\033[35mGrade of the form too high to be signed\033[0m";
+}
+
+const char* AForm::GradeTooLowException::what() const throw ()
+{
+    return "\033[35mGrade of the form too low to be executed\033[0m";
+}
+
+const char* AForm::GradeInvalidException::what() const throw ()
+{
+    return "\033[35mError: bad number: grade must be a number between 1 and 150\033[0m";
+}
+
+const char* AForm::FormNotSignedException::what() const throw ()
+{
+    return "\033[35mForm can't be executed without being signed beforehand\033[0m";
+};
 
 AForm::AForm() : _name("Default"), _gradeSign(75), _gradeExecution(5)
 {

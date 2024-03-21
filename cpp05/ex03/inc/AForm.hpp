@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/21 18:39:13 by marirodr          #+#    #+#             */
+/*   Updated: 2024/03/21 18:41:39 by marirodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AFORM_H
 # define AFORM_H
 
@@ -29,45 +41,30 @@ class AForm
         bool            execute(const Bureaucrat& b) const;
         virtual void    action(void) const = 0;
 
-        class GradeExecTooHighException
+        class GradeExecTooHighException : public std::exception
         {
             public:
-                const char* what() const throw ()
-                {
-                    return "\033[35mGrade of the form too high to be executed\033[0m";
-                }
+                const char* what() const throw ();
         };
-        class GradeSignTooHighException
+        class GradeSignTooHighException : public std::exception
         {
             public:
-                const char* what() const throw ()
-                {
-                    return "\033[35mGrade of the form too high to be signed\033[0m";
-                }
+                const char* what() const throw ();
         };
-        class GradeTooLowException
+        class GradeTooLowException : public std::exception
         {
             public:
-                const char* what() const throw ()
-                {
-                    return "\033[35mGrade of the form too low to be executed\033[0m";
-                }
+                const char* what() const throw ();
         };
-        class GradeInvalidException
+        class GradeInvalidException : public std::exception
         {
             public:
-                const char* what() const throw ()
-                {
-                    return "\033[35mError: bad number: grade must be a number between 1 and 150\033[0m";
-                }
+                const char* what() const throw ();
         };
-        class FormNotSignedException
+        class FormNotSignedException : public std::exception
         {
             public:
-                const char* what() const throw ()
-                {
-                    return "\033[35mForm can't be executed without being signed beforehand\033[0m";
-                }
+                const char* what() const throw ();
         };
 };
 

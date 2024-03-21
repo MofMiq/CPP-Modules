@@ -6,11 +6,16 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:52:17 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/21 14:49:25 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:46:07 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Intern.hpp"
+
+const char* Intern::FormDontExistException::what() const throw ()
+{
+    return "A form with that name dosen't exist!";
+}
 
 /*inicializamos la estructuraa de forma explicita para cada campo por que si no
 da errores al haber miembro constantes.*/

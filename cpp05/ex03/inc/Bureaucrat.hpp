@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:54 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 14:24:14 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:44:02 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,16 @@ class Bureaucrat
         void        signForm(AForm& f);
         void        executeForm(const AForm& f);
 
-    class GradeTooHighException : public std::exception
-    {
-        public:
-            const char* what () const throw ()
-            {
-                return "\033[35mGrade is already the highest!\033[0m";
-            }
-    };
-
-    class GradeTooLowException : public std::exception
-    {
-        public:
-            const char* what () const throw ()
-            {
-                return "\033[35mGrade is already the lowest!\033[0m";
-            }
-    };
+        class GradeTooHighException : public std::exception
+        {
+            public:
+                const char* what () const throw ();
+        };
+        class GradeTooLowException : public std::exception
+        {
+            public:
+                const char* what () const throw ();
+        };
 };
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& obj);

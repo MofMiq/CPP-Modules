@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:54 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/18 13:00:31 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:29:46 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,16 @@ class Bureaucrat
         void        incrementGrade();
         void        decrementGrade();
 
-    class GradeTooHighException : public std::exception
-    {
-        public:
-            const char* what () const throw ()
-            {
-                return "Grade is already the highest!";
-            }
-    };
-
-    class GradeTooLowException : public std::exception
-    {
-        public:
-            const char* what () const throw ()
-            {
-                return "Grade is already the lowest!";
-            }
-    };
+        class GradeTooHighException : public std::exception
+        {
+            public:
+                const char* what () const throw ();
+        };
+        class GradeTooLowException : public std::exception
+        {
+            public:
+                const char* what () const throw ();
+        };
 };
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& obj);

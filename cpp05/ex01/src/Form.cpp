@@ -6,11 +6,20 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:29:41 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/20 14:31:17 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:31:56 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Form.hpp"
+
+const char* Form::GradeTooHighException::what() const throw ()
+{
+    return "Error: bad number: grade can't be lower than 1";
+}
+const char* Form::GradeTooLowException::what() const throw ()
+{
+    return "Error: bad number: grade can't be greater than 150";
+}
 
 Form::Form() : _name("Default"), _gradeRequired(75), _gradeExecution(5)
 {

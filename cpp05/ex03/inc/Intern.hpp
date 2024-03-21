@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:34:49 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/21 14:47:12 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:45:09 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,10 @@ class Intern
 
         AForm* makeForm(const std::string& formName, const std::string& target);
 
-        class FormDontExistException
+        class FormDontExistException : public std::exception
         {
             public:
-                const char* what () const throw ()
-                {
-                    return "A form with that name dosen't exist!";
-                }
+                const char* what () const throw ();
         };
 };
 
