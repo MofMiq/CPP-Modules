@@ -6,28 +6,12 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:54 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/21 18:44:14 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/22 10:54:04 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/AForm.hpp"
-
-const char* Bureaucrat::GradeTooHighException::what() const throw ()
-{
-    return "\033[35mGrade is already the highest!\033[0m";
-}
-
-const char* Bureaucrat::GradeTooLowException::what() const throw ()
-{
-    return "\033[35mGrade is already the lowest!\033[0m";
-}
-
-Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
-{
-    //std::cout << "\033[32mBureaucrat default constructor called\033[0m" << std::endl;
-    return ;
-}
 
 Bureaucrat::Bureaucrat(const std::string &name, const int grade) : _name(name)
 {
@@ -146,6 +130,22 @@ void    Bureaucrat::executeForm(const AForm& f)
         f.action();
         std::cout << this->_name << " executed " << f.getName() << std::endl;
     }
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw ()
+{
+    return "\033[35mGrade is already the highest!\033[0m";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw ()
+{
+    return "\033[35mGrade is already the lowest!\033[0m";
+}
+
+Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
+{
+    //std::cout << "\033[32mBureaucrat default constructor called\033[0m" << std::endl;
+    return ;
 }
 
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &obj)

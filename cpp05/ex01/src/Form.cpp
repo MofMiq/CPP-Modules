@@ -6,20 +6,11 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:29:41 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/21 18:31:56 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/22 10:33:32 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Form.hpp"
-
-const char* Form::GradeTooHighException::what() const throw ()
-{
-    return "Error: bad number: grade can't be lower than 1";
-}
-const char* Form::GradeTooLowException::what() const throw ()
-{
-    return "Error: bad number: grade can't be greater than 150";
-}
 
 Form::Form() : _name("Default"), _gradeRequired(75), _gradeExecution(5)
 {
@@ -122,6 +113,15 @@ bool Form::beSigned(const Bureaucrat &b)
         return false;
     }
     return this->_isSigned;
+}
+
+const char* Form::GradeTooHighException::what() const throw ()
+{
+    return "Error: bad number: grade can't be lower than 1";
+}
+const char* Form::GradeTooLowException::what() const throw ()
+{
+    return "Error: bad number: grade can't be greater than 150";
 }
 
 std::ostream &operator<<(std::ostream &o, const Form &obj)

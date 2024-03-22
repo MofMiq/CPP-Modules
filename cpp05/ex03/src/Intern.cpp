@@ -6,16 +6,11 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:52:17 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/21 18:46:07 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/22 10:40:37 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Intern.hpp"
-
-const char* Intern::FormDontExistException::what() const throw ()
-{
-    return "A form with that name dosen't exist!";
-}
 
 /*inicializamos la estructuraa de forma explicita para cada campo por que si no
 da errores al haber miembro constantes.*/
@@ -87,6 +82,11 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target)
         std::cerr << e.what() << std::endl;
         return nullptr;
     }
+}
+
+const char* Intern::FormDontExistException::what() const throw ()
+{
+    return "A form with that name dosen't exist!";
 }
 
 /*     std::string typeForm[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};

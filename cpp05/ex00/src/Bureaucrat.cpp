@@ -6,21 +6,11 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:01:54 by marirodr          #+#    #+#             */
-/*   Updated: 2024/03/21 17:34:30 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/03/22 10:32:06 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
-
-const char* Bureaucrat::GradeTooHighException::what() const throw ()
-{
-    return "Grade is already the highest!";
-}
-
-const char* Bureaucrat::GradeTooLowException::what() const throw ()
-{
-    return "Grade is already the lowest!";
-}
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {
@@ -119,6 +109,16 @@ void Bureaucrat::decrementGrade()
     {
         std::cerr << e.what() << std::endl;
     }
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw ()
+{
+    return "Grade is already the highest!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw ()
+{
+    return "Grade is already the lowest!";
 }
 
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &obj)
