@@ -6,7 +6,7 @@
 /*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:02:05 by hunter            #+#    #+#             */
-/*   Updated: 2024/03/27 17:15:38 by hunter           ###   ########.fr       */
+/*   Updated: 2024/03/27 21:13:31 by hunter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ enum e_dataType {
     INT,
     FLOAT,
     DOUBLE,
+    PSF,
+    PSD,
     INVALID
 };
 

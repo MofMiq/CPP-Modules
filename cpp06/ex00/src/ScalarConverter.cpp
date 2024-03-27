@@ -6,7 +6,7 @@
 /*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:37:46 by hunter            #+#    #+#             */
-/*   Updated: 2024/03/27 19:21:06 by hunter           ###   ########.fr       */
+/*   Updated: 2024/03/27 21:48:05 by hunter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& rhs)
 
 static bool isInt(const std::string& str)
 {
-    for (size_t i = 0; i < str.length(); i++)
+    if (!std::isdigit(str[0]) && str[0] != '+' && str[0] != '-')
+        return false;
+    for (size_t i = 1; i < str.length(); i++)
     {
         if (!std::isdigit(str[i]))
             return false;
@@ -53,18 +55,17 @@ static bool isFloat(const std::string& str)
     int dotCount = 0;
     int fCount = 0;
 
-    if (str[str.length()] != 'f' || str[str.length()] != 'F')
+    if (str[str.length() - 1] != 'f')
         return false;
-    if (!std::isdigit(str[0]))
+    if (!std::isdigit(str[0]) && str[0] != '+' && str[0] != '-')
         return false;
-    //recorrer el string para comprobar que hay un solo . y una sola f
-    for (size_t i = 0; i < str.length(); i++)
+    for (size_t i = 1; i < str.length(); i++)
     {
         if (str[i] == '.')
             dotCount++;
         if (str[i] == 'f' || str[i] == 'F')
             fCount++;
-        if (!std::isdigit(str[i]) || str[i] == '.' || str[i] == 'f' || str[i] == 'F')
+        if (!std::isdigit(str[i]) && str[i] != '.' && str[i] != 'f')
             return false;
     }
     if (dotCount != 1 || fCount != 1)
@@ -76,13 +77,13 @@ static bool isDouble(const std::string& str)
 {
     int dotCount = 0;
 
-    if (!std::isdigit(str[0]))
+    if (!std::isdigit(str[0]) && str[0] != '+' && str[0] != '-')
         return false;
-    for (size_t i = 0; i < str.length(); i++)
+    for (size_t i = 1; i < str.length(); i++)
     {
         if (str[i] == '.')
             dotCount++;
-        if (!std::isdigit(str[i]) || str[i] == '.')
+        if (!std::isdigit(str[i]) && str[i] != '.')
             return false;
     }
     if (dotCount != 1)
@@ -104,22 +105,24 @@ static bool intLimits(const std::string& str)
 
 e_dataType getIndex(const std::string& str)
 {
+    if (str == "nanf" || str == "inff" || str == "+inff" || str == "-inff")
+        return (PSF);
+    if (str == "nan" || str == "inf" || str == "+inf" || str == "-inf")
+        return (PSD);
     if (str.length() == 1 && ((str[0] >= 32 && str[0] < 48) || (str[0] > 57 && str[0] < 126)))
         return (CHAR);
-    if (isInt(str))
+    else if (isInt(str))
         return (INT);
-    if (isFloat(str))
+    else if (isFloat(str))
         return (FLOAT);
-    if (isDouble(str))
+    else if (isDouble(str))
         return (DOUBLE);
     return INVALID;
 }
 
 void ScalarConverter::convert(const std::string str)
 {
-    int i = getIndex(str);
-
-    switch(i)
+    switch(getIndex(str))
     {
         case CHAR:
         {
@@ -147,15 +150,26 @@ void ScalarConverter::convert(const std::string str)
         }
         case FLOAT:
         {
-            std::cout << RED << "ESTOY EN CASO FLOAT" << END << std::endl;
+            std::cout << RED << "ESTOY EN CASO FLOAT" << END << std::endl; //quitar
             float f = atof(str.c_str());
             if (std::isprint(static_cast<char>(f)) != 0)
                 std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
             else
                 std::cout << "char: non displayable" << std::endl;
-            std::cout << "int: " << static_cast<int>(f) << std::endl;
-            std::cout << "float: " << f << std::endl;
-            std::cout << "double: " << static_cast<double>(f) << std::endl;
+            if (!intLimits(str)) //revisar
+            {
+                std::cout << "int: " << static_cast<int>(f) << std::endl;
+                if (f == static_cast<int>(f))
+                {
+                    std::cout << "float: " << f << ".0f" << std::endl;
+                    std::cout << "double: " << static_cast<double>(f) << ".0" << std::endl;
+                }
+                else
+                {
+                    std::cout << "float: " << f << "f" << std::endl;
+                    std::cout << "double: " << static_cast<double>(f) << std::endl;
+                }
+            }
             break;
         }
         case DOUBLE:
@@ -166,9 +180,38 @@ void ScalarConverter::convert(const std::string str)
                 std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
             else
                 std::cout << "char: non displayable" << std::endl;
-            std::cout << "int: " << static_cast<int>(d) << std::endl;
-            std::cout << "float: " << static_cast<float>(d) << ".f" << std::endl;
-            std::cout << "double: " << d << std::endl;
+            if (!intLimits(str)) //revisar
+            {
+                std::cout << "int: " << static_cast<int>(d) << std::endl;
+                if (d == static_cast<int>(d))
+                {
+                    std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
+                    std::cout << "double: " << d << ".0" << std::endl;
+                }
+                else
+                {
+                    std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+                    std::cout << "double: " << d << std::endl;
+                }
+            }
+            break;
+        }
+        case PSF:
+        {
+            std::cout << RED << "ESTOY EN CASO PSF" << END << std::endl; //quitar
+            std::cout << "char: impossible convertion" << std::endl;
+            std::cout << "int: impossible convertion" << std::endl;
+            std::cout << "float: " << str << std::endl;
+            std::cout << "double: " << str.substr(0, str.length() - 1) << std::endl;
+            break;
+        }
+        case PSD:
+        {
+            std::cout << RED << "ESTOY EN CASO PSD" << END << std::endl; //quitar
+            std::cout << "char: impossible convertion" << std::endl;
+            std::cout << "int: impossible convertion" << std::endl;
+            std::cout << "float: " << str << "f" << std::endl;
+            std::cout << "double: " << str << std::endl;
             break;
         }
         default:
