@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 12:14:51 by hunter            #+#    #+#             */
-/*   Updated: 2024/03/28 13:36:43 by hunter           ###   ########.fr       */
+/*   Created: 2024/03/28 13:39:23 by hunter            #+#    #+#             */
+/*   Updated: 2024/03/28 14:02:19 by hunter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Serializer.hpp"
-#include "../inc/Data.hpp"
-#include <iostream>
+#ifndef BASE_H
+# define BASE_H
 
-int main()
+class Base
 {
-    Data* data = new Data(12, "I like unicorns!");
+    public:
+        virtual ~Base();
 
-    uintptr_t raw = Serializer::serialize(data);
-    Data* data2 = Serializer::deserialize(raw);
-    
-    std::cout << *data << *data2;
-    
-    delete data;
-    
-    return 0;
-}
+        Base* generate(void);
+        void identify(Base* p);
+        void identify(Base& p);
+};
+
+#define RED "\033[31m"
+#define END "\033[0m"
+
+#endif
