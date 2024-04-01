@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 16:37:46 by hunter            #+#    #+#             */
-/*   Updated: 2024/03/27 21:48:05 by hunter           ###   ########.fr       */
+/*   Created: 2024/03/27 16:37:46 by marirodr          #+#    #+#             */
+/*   Updated: 2024/04/01 10:50:39 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,22 +143,21 @@ void ScalarConverter::convert(const std::string str)
             if (!intLimits(str))
             {
                 std::cout << "int: " << i << std::endl;
-                std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
-                std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+                std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl; //Explicit demotion
+                std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl; //Explicit demotion
             }
             break;
         }
         case FLOAT:
         {
-            std::cout << RED << "ESTOY EN CASO FLOAT" << END << std::endl; //quitar
             float f = atof(str.c_str());
             if (std::isprint(static_cast<char>(f)) != 0)
                 std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
             else
                 std::cout << "char: non displayable" << std::endl;
-            if (!intLimits(str)) //revisar
+            if (!intLimits(str))
             {
-                std::cout << "int: " << static_cast<int>(f) << std::endl;
+                std::cout << "int: " << static_cast<int>(f) << std::endl;  //Explicit promotion
                 if (f == static_cast<int>(f))
                 {
                     std::cout << "float: " << f << ".0f" << std::endl;
@@ -174,15 +173,14 @@ void ScalarConverter::convert(const std::string str)
         }
         case DOUBLE:
         {
-            std::cout << RED << "ESTOY EN CASO DOUBLE" << END << std::endl;
             double d = atof(str.c_str());
             if (std::isprint(static_cast<char>(d)) != 0)
                 std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
             else
                 std::cout << "char: non displayable" << std::endl;
-            if (!intLimits(str)) //revisar
+            if (!intLimits(str))
             {
-                std::cout << "int: " << static_cast<int>(d) << std::endl;
+                std::cout << "int: " << static_cast<int>(d) << std::endl; //Explicit promotion
                 if (d == static_cast<int>(d))
                 {
                     std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
@@ -198,18 +196,16 @@ void ScalarConverter::convert(const std::string str)
         }
         case PSF:
         {
-            std::cout << RED << "ESTOY EN CASO PSF" << END << std::endl; //quitar
-            std::cout << "char: impossible convertion" << std::endl;
-            std::cout << "int: impossible convertion" << std::endl;
+            std::cout << "char: impossible" << std::endl;
+            std::cout << "int: impossible" << std::endl;
             std::cout << "float: " << str << std::endl;
             std::cout << "double: " << str.substr(0, str.length() - 1) << std::endl;
             break;
         }
         case PSD:
         {
-            std::cout << RED << "ESTOY EN CASO PSD" << END << std::endl; //quitar
-            std::cout << "char: impossible convertion" << std::endl;
-            std::cout << "int: impossible convertion" << std::endl;
+            std::cout << "char: impossible" << std::endl;
+            std::cout << "int: impossible" << std::endl;
             std::cout << "float: " << str << "f" << std::endl;
             std::cout << "double: " << str << std::endl;
             break;

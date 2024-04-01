@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 16:02:05 by hunter            #+#    #+#             */
-/*   Updated: 2024/03/27 21:13:31 by hunter           ###   ########.fr       */
+/*   Created: 2024/03/27 16:02:05 by marirodr          #+#    #+#             */
+/*   Updated: 2024/04/01 10:19:43 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hunter <hunter@student.42.fr>              +#+  +:+       +#+         #
+#    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/28 13:37:21 by hunter            #+#    #+#              #
-#    Updated: 2024/03/28 13:39:12 by hunter           ###   ########.fr        #
+#    Created: 2024/03/28 13:37:21 by marirodr          #+#    #+#              #
+#    Updated: 2024/04/01 10:22:04 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

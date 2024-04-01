@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hunter <hunter@student.42.fr>              +#+  +:+       +#+         #
+#    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/28 11:15:36 by hunter            #+#    #+#              #
-#    Updated: 2024/03/28 12:20:13 by hunter           ###   ########.fr        #
+#    Created: 2024/03/28 11:15:36 by marirodr          #+#    #+#              #
+#    Updated: 2024/04/01 11:01:27 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,6 @@ CFLAGS	=	-std=c++98 -Wall -Werror -Wextra
 
 SRC		=	src/main.cpp \
 			src/Serializer.cpp \
-			src/Data.cpp \
-
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 

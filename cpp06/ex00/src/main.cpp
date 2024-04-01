@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 16:42:56 by hunter            #+#    #+#             */
-/*   Updated: 2024/03/27 16:46:06 by hunter           ###   ########.fr       */
+/*   Created: 2024/03/27 16:42:56 by marirodr          #+#    #+#             */
+/*   Updated: 2024/04/01 10:29:16 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main(int argc, char **argv)
         ScalarConverter::convert(argv[1]);
         return 0;
     }
-    std::cout << "Error: usage: ./ScalarConverter <arg>\nOnly one argument" << std::endl;
+    std::cout << "Error: usage: ./ScalarConverter <arg>" << std::endl;
     return 1;
 }

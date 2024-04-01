@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 14:26:14 by hunter            #+#    #+#             */
-/*   Updated: 2024/03/28 14:44:29 by hunter           ###   ########.fr       */
+/*   Created: 2024/03/28 14:26:14 by marirodr          #+#    #+#             */
+/*   Updated: 2024/04/01 11:53:25 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,20 @@ Base* generate(void);
 void identify(Base* p);
 void identify(Base& p);
 
+/* class Unknown : public Base {
+
+}; */
+
 int main()
 {
     Base* obj = generate();
 
     identify(obj);
     identify(*obj);
+
+/*     Unknown u;
+    identify(&u);
+    identify(u); */
 
     delete obj;
 

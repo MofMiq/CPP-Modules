@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 11:21:11 by hunter            #+#    #+#             */
-/*   Updated: 2024/03/28 12:28:55 by hunter           ###   ########.fr       */
+/*   Created: 2024/03/28 11:21:11 by marirodr          #+#    #+#             */
+/*   Updated: 2024/04/01 11:01:37 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SERIALIZER_H
 
 #include <stdint.h>
-#include "../inc/Data.hpp"
+#include "Data.hpp"
 
 class Serializer
 {
