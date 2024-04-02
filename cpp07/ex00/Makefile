@@ -6,11 +6,11 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/02 11:03:28 by marirodr          #+#    #+#              #
-#    Updated: 2024/04/02 11:03:30 by marirodr         ###   ########.fr        #
+#    Updated: 2024/04/02 13:15:10 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Template
+NAME	=	Whatever
 
 CC		=	c++
 

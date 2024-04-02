@@ -6,11 +6,11 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/02 11:03:44 by marirodr          #+#    #+#              #
-#    Updated: 2024/04/02 11:04:16 by marirodr         ###   ########.fr        #
+#    Updated: 2024/04/02 16:39:53 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Swap
+NAME	=	Array
 
 CC		=	c++
 

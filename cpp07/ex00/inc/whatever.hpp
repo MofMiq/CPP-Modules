@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Template.cpp.tpp                                   :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:17:33 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/02 11:12:25 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/02 13:13:00 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPLATE_H
-# define TEMPLATE_H
+#ifndef WHATEVER_H
+# define WHATEVER_H
 
 /* La forma mas comun de trabajar con funciones templates es declarar y definir la
 funcion en el mismo archivo (header). Esto es porque el compilador necesita ver la
