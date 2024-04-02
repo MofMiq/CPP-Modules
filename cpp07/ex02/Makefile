@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/04/02 11:03:44 by marirodr          #+#    #+#              #
+#    Updated: 2024/04/02 11:04:16 by marirodr         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	=	Swap
 
 CC		=	c++
@@ -5,8 +17,6 @@ CC		=	c++
 CFLAGS	=	-std=c++98 -Wall -Werror -Wextra
 
 SRC		=	src/main.cpp \
-			src/ScalarConverter.cpp \
-
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
 
