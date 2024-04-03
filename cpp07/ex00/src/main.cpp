@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:23:12 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/02 13:16:00 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:09:22 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,34 +68,3 @@ int main()
 
   return 0; 
 }
-
-/* #include <string>
-
-class Awesome
-{
-  public:
-    Awesome(void) : _n(0) {}
-    Awesome( int n ) : _n( n ) {}
-    Awesome & operator= (Awesome & a) { _n = a._n; return *this; }
-    bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
-    bool operator!=( Awesome const & rhs ) const{ return (this->_n != rhs._n); }
-    bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
-    bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
-    bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
-    bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
-    int get_n() const { return _n; }
-  private:
-    int _n;
-};
-std::ostream & operator<<(std::ostream & o, const Awesome &a) { o << a.get_n(); return o; }
-
-int main(void)
-{
-	Awesome a(2), b(4);
-
-        swap(a, b);
-        std::cout << a << " " << b << std::endl;
-        std::cout << max(a, b) << std::endl;
-        std::cout << min(a, b) << std::endl;
-        return (0);
-} */
