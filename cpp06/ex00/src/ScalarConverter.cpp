@@ -6,11 +6,12 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:37:46 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/01 10:50:39 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:05:17 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ScalarConverter.hpp"
+#include <iomanip>
 
 ScalarConverter::ScalarConverter()
 {
@@ -95,6 +96,7 @@ static bool intLimits(const std::string& str)
 {
     if (atol(str.c_str()) < INT_MIN || atol(str.c_str()) > INT_MAX)
     {
+        std::cout << "char: overflow" << std::endl;
         std::cout << "int: overflow" << std::endl;
         std::cout << "float: overflow" << std::endl;
         std::cout << "double: overflow" << std::endl;
@@ -135,13 +137,15 @@ void ScalarConverter::convert(const std::string str)
         }
         case INT:
         {
-            int i = atol(str.c_str());
-            if (std::isprint(static_cast<char>(i)) != 0)
-                std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
-            else
-                std::cout << "char: non displayable" << std::endl;
             if (!intLimits(str))
             {
+                int i = atol(str.c_str());
+                if (std::isprint(static_cast<char>(i)) != 0)
+                    std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+                else
+                std::cout << std::fixed;
+                std::cout << std::setprecision(1);
+                std::cout << "char: non displayable" << std::endl;
                 std::cout << "int: " << i << std::endl;
                 std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl; //Explicit demotion
                 std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl; //Explicit demotion
@@ -150,14 +154,14 @@ void ScalarConverter::convert(const std::string str)
         }
         case FLOAT:
         {
-            float f = atof(str.c_str());
-            if (std::isprint(static_cast<char>(f)) != 0)
-                std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
-            else
-                std::cout << "char: non displayable" << std::endl;
             if (!intLimits(str))
             {
-                std::cout << "int: " << static_cast<int>(f) << std::endl;  //Explicit promotion
+                float f = atof(str.c_str());
+                if (std::isprint(static_cast<char>(f)) != 0)
+                    std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
+                else
+                    std::cout << "char: non displayable" << std::endl;
+                    std::cout << "int: " << static_cast<int>(f) << std::endl;  //Explicit promotion
                 if (f == static_cast<int>(f))
                 {
                     std::cout << "float: " << f << ".0f" << std::endl;
@@ -165,6 +169,8 @@ void ScalarConverter::convert(const std::string str)
                 }
                 else
                 {
+                    std::cout << std::fixed;
+                    std::cout << std::setprecision(6);
                     std::cout << "float: " << f << "f" << std::endl;
                     std::cout << "double: " << static_cast<double>(f) << std::endl;
                 }
@@ -173,14 +179,14 @@ void ScalarConverter::convert(const std::string str)
         }
         case DOUBLE:
         {
-            double d = atof(str.c_str());
-            if (std::isprint(static_cast<char>(d)) != 0)
-                std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
-            else
-                std::cout << "char: non displayable" << std::endl;
             if (!intLimits(str))
             {
-                std::cout << "int: " << static_cast<int>(d) << std::endl; //Explicit promotion
+                double d = atof(str.c_str());
+                if (std::isprint(static_cast<char>(d)) != 0)
+                    std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
+                else
+                    std::cout << "char: non displayable" << std::endl;
+                    std::cout << "int: " << static_cast<int>(d) << std::endl; //Explicit promotion
                 if (d == static_cast<int>(d))
                 {
                     std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
@@ -188,6 +194,8 @@ void ScalarConverter::convert(const std::string str)
                 }
                 else
                 {
+                    std::cout << std::fixed;
+                    std::cout << std::setprecision(6);
                     std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
                     std::cout << "double: " << d << std::endl;
                 }
