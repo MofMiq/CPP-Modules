@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 12:40:07 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/02 16:41:31 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:07:42 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define END "\033[0m"
 
 #include <iostream>
+#include <stdexcept>
 
 template <typename T>
 class Array
@@ -34,18 +35,17 @@ class Array
     ~Array();
 
     Array& operator=(const Array& rhs);
+    T& operator[](unsigned int i) const; //sobrecarga del operador de suscripcion ([]).
 
-    unsigned int size();
+    unsigned int size() const;
 };
 
 #endif
 
 template <typename T>
-Array<T>::Array()
+Array<T>::Array() : _array(NULL), _n(0)
 {
   std::cout << GREEN << "Array default constructor called" << END << std::endl;
-  this->_array = NULL; //esto es un array vacio?
-  this->_n = 0;
   return ;
 }
 
@@ -53,8 +53,8 @@ template <typename T>
 Array<T>::Array(unsigned int n)
 {
   std::cout << GREEN << "Array param constructor called" << END << std::endl;
-  this->_array = new T[n](); //Los parentesis sirven para inicializar todos los valores
   this->_n = n;
+  this->_array = new T[n](); //Los parentesis sirven para inicializar todos los valores
   return ;
 }
 
@@ -66,7 +66,6 @@ Array<T>::Array(const Array& rhs)
   std::cout << GREEN << "Array copy constructor called" << END << std::endl;
   if (this != &rhs)
   {
-    //delete[] this->_array;
     this->_n = rhs._n;
     this->_array = new T[this->_n];
     for (unsigned int i = 0; i < this->_n; i++)
@@ -79,17 +78,21 @@ template <typename T>
 Array<T>::~Array()
 {
   std::cout << RED << "Array destructor called" << END << std::endl;
-  delete[] this->_array;
+  if (this->_array != NULL)
+  {
+    delete[] this->_array;
+    this->_array = NULL;
+  }
   return ;
 }
 
 template <typename T>
-Array& Array<T>::operator=(const Array& rhs)
+Array<T>& Array<T>::operator=(const Array& rhs)
 {
   std::cout << GREEN << "Array assignment operator called" << END << std::endl;
   if (this != &rhs)
   {
-    delete[] this->_array;
+    this->~Array();
     this->_n = rhs._n;
     this->_array = new T[this->_n];
     for (unsigned int i = 0; i < this->_n; i++)
@@ -99,8 +102,24 @@ Array& Array<T>::operator=(const Array& rhs)
 }
 
 template <typename T>
-unsigned int Array<T>::size()
+T& Array<T>::operator[](unsigned int i) const
 {
-  std::cout << YELLOW << "size function called" << END << std::endl;
+  if (i >= this->_n)
+    throw std::out_of_range("Index out of range\n");
+  return this->_array[i];
+}
+
+template <typename T>
+unsigned int Array<T>::size() const
+{
   return this->_n;
+}
+
+template<typename T>
+std::ostream& operator<<(std::ostream& o, const Array<T>& obj)
+{
+  for (unsigned int i = 0; i < obj.size(); i++)
+    o << YELLOW << "obj[" << i << "]: " << obj[i] << std::endl;
+  o << "obj.size: " << obj.size() << END << std::endl;
+  return o;
 }
