@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:01:55 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/08 13:50:11 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:14:45 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ const char* ValueNotFound::what() const throw()
 template <typename T>
 void easyfind(const T& cont, int value)
 {
-  typename T::const_iterator it;
+  typename T::const_iterator it; //cada tipo de contenedor tiene su "propio" iterador, por tanto aqui tenemos que hacerlo dependiente del template
 
   it = std::find(cont.begin(), cont.end(), value);
   if (it == cont.end())
     throw ValueNotFound();
+  std::cout << "Value " << value << " found" << std::endl;
   return ;
 }
 
