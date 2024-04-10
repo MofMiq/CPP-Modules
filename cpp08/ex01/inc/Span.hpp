@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:18:34 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/09 16:31:36 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:32:45 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Span
   private:
     unsigned int      _size;
     std::vector<int>  _cont;
+    bool              _flag;
 
   public:
     Span();
@@ -42,8 +43,9 @@ class Span
     int   longestSpan();
     void  fillSpan(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
-    unsigned int      getSize() const;
+    unsigned int            getSize() const;
     const std::vector<int>& getCont() const;
+    bool                    getFlag() const;
 
     class ContAlreadyFilled : std::exception
     {
@@ -52,12 +54,6 @@ class Span
     };
 
     class NotEnoughtElementsToSpan : std::exception
-    {
-      public:
-        const char* what() const throw();
-    };
-  
-    class OutOfRange : std::exception
     {
       public:
         const char* what() const throw();

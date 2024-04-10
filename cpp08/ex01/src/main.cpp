@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:29:21 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/09 16:43:37 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:32:16 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ int main()
 
   obj2.fillSpan(v.begin(), v.end());
   std::cout << obj2;
+  std::cout << obj2.shortestSpan() << std::endl;
+  std::cout << obj2.longestSpan() << std::endl;
+
 
   return 0; 
 }

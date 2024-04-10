@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:29:13 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/09 16:44:01 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:45:37 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Span::Span(const Span &rhs)
   {
     this->_size = rhs.getSize();
     this->_cont = rhs.getCont();
+    this->_flag = rhs.getFlag();
   }
   return ;
 }
@@ -50,15 +51,13 @@ Span &Span::operator=(const Span &rhs)
   {
     this->_size = rhs.getSize();
     this->_cont = rhs.getCont();
+    this->_flag = rhs.getFlag();
   }
   return *this;
 }
 
 void Span::addNumber(int n)
 {
-  std::vector<int>::iterator it;
-  it = this->_cont.end();
-  //std::cout << "it.end(): " << *it << " y cont.size(): " << this->_cont.size() << " y size: " << this->getSize() << std::endl;
   try
   {
     if (this->_cont.size() == this->_size)
@@ -67,6 +66,7 @@ void Span::addNumber(int n)
   }
   catch (const ContAlreadyFilled& e)
   {
+    this->_flag = true;
     std::cerr << RED << e.what() << END << std::endl;
   }
 }
@@ -85,12 +85,12 @@ int Span::shortestSpan()
     std::vector<int>::const_iterator it = copy.begin();
     std::sort(copy.begin(), copy.end());
     res = *(it + 1) - *it;
-    //std::cout << "en shortestSpan: *it +1: " << *(it + 1) << " *it: " << *it << std::endl;
-    for (it = copy.begin(); it != copy.end() - 1; ++it)
+/*     for (it = copy.begin(); it != copy.end(); ++it)
+      std::cout << *it << " ";
+    std::cout << std::endl; */
+    for (; it != copy.end() - 1; ++it) //cuando en el for, en la parte de inicializar el valor, si este ya  se encuentra inicializado previamente como es este caso, se puede dejar vacia
     {
       int tmp = *(it + 1) - *it;
-      //std::cout << "en shortestSpan: res: " << res << std::endl;
-      //std::cout << "en shortestSpan: tmp: " << tmp << std::endl;
       if (tmp < res)
         res = tmp;
     }
@@ -98,6 +98,7 @@ int Span::shortestSpan()
   catch(const NotEnoughtElementsToSpan& e)
   {
     std::cerr << RED << e.what() << END << std::endl;
+    return (-1);
   }
 	return (res);
 }
@@ -119,17 +120,21 @@ int Span::longestSpan()
   catch (const NotEnoughtElementsToSpan& e)
   {
     std::cerr << RED << e.what() << END << std::endl;
+    return (-1);
   }
 	return (res);
 }
 
 void Span::fillSpan(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
+  srand(time(NULL));
   this->_cont.clear();
-  for (std::vector<int>::iterator it = begin; it != end; ++it)
+  for (std::vector<int>::iterator it = begin; it != end && !this->_flag; ++it)
   {
-    this->addNumber(*it);
+    int i = rand() % 1000;
+    this->addNumber(i);
   }
+  this->_flag = false;
 }
 
 unsigned int Span::getSize() const
@@ -142,12 +147,17 @@ const std::vector<int>& Span::getCont() const
   return this->_cont;
 }
 
-const char *Span::ContAlreadyFilled::what() const throw()
+bool Span::getFlag() const
+{
+  return this->_flag;
+}
+
+const char* Span::ContAlreadyFilled::what() const throw()
 {
   return "This vector is already filled";
 }
 
-const char *Span::NotEnoughtElementsToSpan::what() const throw()
+const char* Span::NotEnoughtElementsToSpan::what() const throw()
 {
   return "There isn't enought elements in this vector to calculte span";
 }
