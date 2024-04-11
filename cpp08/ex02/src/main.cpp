@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:27:04 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/10 18:43:06 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:40:21 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main()
 {
+  std::cout << "-------EXAMPLE MAIN-------" << std::endl;
   MutantStack<int> mstack;
 
   mstack.push(5);
@@ -48,6 +49,8 @@ int main()
   std::cout << YELLOW << "Top element: " << s.top() << END << std::endl;
   std::cout << BLUE << "Size of the stack: " << s.size() << END << std::endl;
 
+  
+  std::cout << "-------EMPTY STACK-------" << std::endl;
   MutantStack<int>  m2;
   std::cout << BLUE << "Size of the stack: " << m2.size() << END << std::endl;
 
@@ -72,6 +75,7 @@ int main()
     ++i;
   }
 
+  std::cout << "-------COPY & ASSIGMENT-------" << std::endl;
   MutantStack<int>  m3 = m2;
   std::cout << YELLOW << "Top element: " << m3.top() << END << std::endl;
   std::cout << BLUE << "Size of the stack: " << m3.size() << END << std::endl;
@@ -98,6 +102,7 @@ int main()
     ++i;
   }
 
+  std::cout << "-------LIST-------" << std::endl;
   std::list<int> lst;
   lst.push_back(89);
   lst.push_back(52);

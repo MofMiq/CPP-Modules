@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:01:55 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/09 11:14:45 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:16:04 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,4 @@ un contenedor usando un entero, el comportamiento es indefinido y puede resultar
 ejecución.
 
 Eficiencia: Para algunos contenedores, como std::list y std::set, el acceso a los elementos mediante
-iteradores es más eficiente que el acceso mediante índices enteros.
-*/
+iteradores es más eficiente que el acceso mediante índices enteros. */

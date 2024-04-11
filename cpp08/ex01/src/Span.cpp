@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:29:13 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/10 11:45:37 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:39:49 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,6 @@ int Span::shortestSpan()
     std::vector<int>::const_iterator it = copy.begin();
     std::sort(copy.begin(), copy.end());
     res = *(it + 1) - *it;
-/*     for (it = copy.begin(); it != copy.end(); ++it)
-      std::cout << *it << " ";
-    std::cout << std::endl; */
     for (; it != copy.end() - 1; ++it) //cuando en el for, en la parte de inicializar el valor, si este ya  se encuentra inicializado previamente como es este caso, se puede dejar vacia
     {
       int tmp = *(it + 1) - *it;

@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:18:34 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/10 11:32:45 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:33:50 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,15 @@ std::ostream& operator<<(std::ostream& o, const Span& obj);
 #endif
 
 /*
-Acceso aleatorio: Los vectores permiten el acceso aleatorio a sus elementos, lo que significa
-que puedes acceder a cualquier elemento en cualquier posición en tiempo constante O(1).
+Acceso aleatorio: Los vectores permiten el acceso aleatorio a sus elementos.
 
 Redimensionamiento dinámico: A diferencia de los arrays nativos de C++, los vectores pueden
 cambiar su tamaño en tiempo de ejecución. Si se agregan elementos más allá de su capacidad actual,
 se redimensionan automáticamente.
 
 Inserción y eliminación eficiente al final: Los vectores permiten la inserción y eliminación
-de elementos al final en tiempo constante O(1). Sin embargo, la inserción o eliminación en
-posiciones que no sean el final puede ser costosa, ya que puede requerir el desplazamiento
-de elementos.
+de elementos al final. Sin embargo, la inserción o eliminación en posiciones que no sean el
+final puede ser costosa, ya que puede requerir el desplazamiento de elementos.
 
 Uso de iteradores: Los vectores pueden ser recorridos utilizando iteradores, lo que facilita
 su manipulación con algoritmos de la biblioteca estándar de C++.

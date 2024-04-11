@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:23:09 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/10 18:27:05 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:49:35 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,6 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
   public:
-    /*typedef: Esta es una palabra clave en C++ que se utiliza para definir un alias
-    para un tipo existente.
-
-    typename: Esta es otra palabra clave en C++ que se utiliza para indicar que el
-    nombre que sigue es un tipo. Es necesario aquí porque
-    std::stack<T>::container_type::iterator depende del parámetro de plantilla T, y
-    el compilador no puede saber a priori si container_type es un tipo o una variable estática.
-
-    std::stack<T>::container_type::iterator: Aquí estamos accediendo al tipo de
-    iterador del contenedor subyacente de std::stack<T>. std::stack<T>::container_type
-    es el tipo del contenedor subyacente, y ::iterator es el tipo de iterador de ese contenedor.
-
-    it: Este es el alias que estamos definiendo para el tipo de iterador del contenedor subyacente.*/
     typedef typename std::stack<T>::container_type::iterator iterator;
 
     MutantStack() : std::stack<T>() {};
@@ -66,37 +53,20 @@ class MutantStack : public std::stack<T>
     {
       return this->c.end();
     }
-
-    void push(const T& value)
-    {
-      std::stack<T>::push(value);
-    }
-
-    const T& top() const
-    {
-      return std::stack<T>::top();
-    }
-
-    size_t size() const
-    {
-      return std::stack<T>::size();
-    }
-
-    void pop()
-    {
-      std::stack<T>::pop();
-    }
-
-    bool empty()
-    {
-      std::stack<T>::empty();
-    }
-
-    /* void clear()
-    {
-      while (!std::stack<T>::empty())
-        std::stack<T>::pop();
-    } */
 };
 
 #endif
+
+/*typedef: Esta es una palabra clave en C++ que se utiliza para definir un alias
+para un tipo existente.
+
+typename: Esta es otra palabra clave en C++ que se utiliza para indicar que el
+nombre que sigue es un tipo. Es necesario aquí porque
+std::stack<T>::container_type::iterator depende del parámetro de plantilla T, y
+el compilador no puede saber a priori si container_type es un tipo o una variable estática.
+
+std::stack<T>::container_type::iterator: Aquí estamos accediendo al tipo de
+iterador del contenedor subyacente de std::stack<T>. std::stack<T>::container_type
+es el tipo del contenedor subyacente, y ::iterator es el tipo de iterador de ese contenedor.
+
+it: Este es el alias que estamos definiendo para el tipo de iterador del contenedor subyacente.*/
