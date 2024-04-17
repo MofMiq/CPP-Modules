@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:33:35 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/17 16:53:43 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:51:45 by hunter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/BitcoinExchange.hpp"
 #include <fstream>
+#include <cstdlib>
+#include <climits>
 
 bool ft_check_number(const std::string& date, size_t i);
 
@@ -28,7 +30,7 @@ bool  ft_check_extension(const std::string& file, const std::string& ext)
 
 bool ft_check(const std::string& file)
 {
-  std::ifstream infile(file);
+  std::ifstream infile(file.c_str());
   if (!infile)
   {
     std::cout << "Error: file not found in current directory" << std::endl;
@@ -45,7 +47,7 @@ bool ft_check(const std::string& file)
 
 std::map<std::string, float> ft_copy_database(const std::string& file, char c)
 {
-  std::ifstream infile(file);
+  std::ifstream infile(file.c_str());
   std::string   line;
   std::getline(infile, line);
 
@@ -165,7 +167,7 @@ bool  ft_read_input(const std::string& file, const BitcoinExchange& database)
   if (!ft_check(file))
     return false;
 
-  std::ifstream input(file);
+  std::ifstream input(file.c_str());
   std::string   line;
   std::getline(input, line);
   if (line != "date | value")
