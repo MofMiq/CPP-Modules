@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:50:25 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/16 12:27:18 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:53:28 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,15 @@ const std::map<std::string, float> &BitcoinExchange::getDatabase() const
   return this->_database;
 }
 
-const char *BitcoinExchange::NegativeNumber::what() const throw()
+float BitcoinExchange::findValue(std::string& date, float& value) const
 {
-  return "Error: not a positive number";
-}
-
-const char *BitcoinExchange::BadInput::what() const throw()
-{
-  return "Error: bad input";
-}
-
-const char *BitcoinExchange::OutLimitInteger::what() const throw()
-{
-  return "Error: too large a number";
+  std::map<std::string, float>::const_iterator it = this->_database.lower_bound(date);
+  //std::cout << YELLOW << "En findValue: lower_bound() es: " << it->first << END << std::endl;
+  if (it != this->_database.begin() && (it == this->_database.end() || it->first != date))
+    --it;
+  //std::cout << YELLOW << "En findValue: despues de restar es: " << it->first << END << std::endl;
+  //std::cout << GREEN << "En findValue: res: " << it->second * value << END << std::endl;
+  return it->second * value;
 }
 
 std::ostream& operator<<(std::ostream& o, const BitcoinExchange& obj)

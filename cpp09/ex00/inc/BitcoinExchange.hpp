@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:31:37 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/16 11:57:46 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:40:24 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,7 @@ class BitcoinExchange
     BitcoinExchange& operator=(const BitcoinExchange& rhs);
 
     const std::map<std::string, float>& getDatabase() const;
-
-    class  NegativeNumber : public std::exception {
-      public:
-        const char* what() const throw ();
-    };
-    class  BadInput : public std::exception {
-      public:
-        const char* what() const throw ();
-    };
-    class  OutLimitInteger : public std::exception {
-      public:
-        const char* what() const throw ();
-    };
+    float findValue(std::string& date, float& value) const;
 };
 
 std::ostream& operator<<(std::ostream& o, const BitcoinExchange& obj);

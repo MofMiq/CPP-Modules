@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 10:30:35 by marirodr          #+#    #+#              #
-#    Updated: 2024/04/16 10:31:18 by marirodr         ###   ########.fr        #
+#    Updated: 2024/04/17 16:54:15 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	btc
 
 CC		=	c++
 
-CFLAGS	=	-std=c++98 -Wall -Werror -Wextra
+CFLAGS	= -std=c++98 -Wall -Werror -Wextra
 
 SRC		=	src/main.cpp \
 				src/BitcoinExchange.cpp \
