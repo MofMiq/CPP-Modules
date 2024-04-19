@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:56:24 by hunter            #+#    #+#             */
-/*   Updated: 2024/04/17 21:10:47 by hunter           ###   ########.fr       */
+/*   Updated: 2024/04/19 16:16:37 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,33 @@
 
 #include <iostream>
 #include <stack>
+#include <string>
 
 class RPN
 {
     private:
-        std::stack<int> _stack;
+        std::stack<float> _stack;
+        std::string     _numbers;
+        RPN();
 
     public:
-        RPN();
-        RPN(std::stack<int> stack);
+        RPN(std::string& numbers);
         RPN(const RPN& rhs);
         ~RPN();
 
         RPN& operator=(const RPN& rhs);
 
-        const std::stack<int>& getStack() const;
+        const std::stack<float>&  getStack() const;
+        const std::string&      getNumbers() const;
+        void                    calculate();
+        bool                    isSign(std::string& c);
+        float                   operation(std::string& token, float n1, float n2);
+
+        class InvalidFormat : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
 };
 
 #endif

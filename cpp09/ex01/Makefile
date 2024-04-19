@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hunter <hunter@student.42.fr>              +#+  +:+       +#+         #
+#    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 20:54:45 by hunter            #+#    #+#              #
-#    Updated: 2024/04/17 20:55:30 by hunter           ###   ########.fr        #
+#    Updated: 2024/04/19 12:28:49 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ NAME	=	RPN
 
 CC		=	c++
 
-CFLAGS	= -std=c++98 -Wall -Werror -Wextra
+CFLAGS	= -g -std=c++98 -Wall -Werror -Wextra
 
 SRC		=	src/main.cpp \
-			src/RPN.cpp \
+				src/RPN.cpp \
 
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
