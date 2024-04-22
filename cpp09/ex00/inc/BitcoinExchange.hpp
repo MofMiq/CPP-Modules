@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:31:37 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/17 16:40:24 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:31:22 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #define GREEN "\033[32m"
 #define RED "\033[31m"
 #define YELLOW "\033[33m"
-#define PURPLE "\033[34m"
 #define END "\033[0m"
 
 class BitcoinExchange

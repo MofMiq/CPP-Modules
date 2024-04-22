@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:56:24 by hunter            #+#    #+#             */
-/*   Updated: 2024/04/19 16:16:37 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:32:23 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #define GREEN "\033[32m"
 #define RED "\033[31m"
 #define YELLOW "\033[33m"
-#define PURPLE "\033[34m"
 #define END "\033[0m"
 
 #include <iostream>
@@ -26,8 +25,8 @@
 class RPN
 {
     private:
-        std::stack<float> _stack;
-        std::string     _numbers;
+        std::stack<float>   _stack;
+        std::string         _numbers;
         RPN();
 
     public:
@@ -37,11 +36,11 @@ class RPN
 
         RPN& operator=(const RPN& rhs);
 
-        const std::stack<float>&  getStack() const;
-        const std::string&      getNumbers() const;
-        void                    calculate();
-        bool                    isSign(std::string& c);
-        float                   operation(std::string& token, float n1, float n2);
+        const std::stack<float>&    getStack() const;
+        const std::string&          getNumbers() const;
+        void                        calculate();
+        bool                        isSign(std::string& c);
+        float                       operation(std::string& token, float n1, float n2);
 
         class InvalidFormat : public std::exception
         {

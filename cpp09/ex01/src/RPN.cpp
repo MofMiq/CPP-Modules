@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:00:43 by hunter            #+#    #+#             */
-/*   Updated: 2024/04/19 16:21:49 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:32:25 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ float RPN::operation(std::string& token, float n1, float n2)
       throw std::runtime_error("Error: Division by zero");
     return n1 / n2;
   }
-  return 0; //nunca llega
+  return 0;
 }
 
 /*Un flujo de entrada de cadena se utiliza para realizar operaciones de

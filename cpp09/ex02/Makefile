@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/17 20:54:45 by hunter            #+#    #+#              #
-#    Updated: 2024/04/22 13:26:21 by marirodr         ###   ########.fr        #
+#    Created: 2024/04/22 11:27:58 by marirodr          #+#    #+#              #
+#    Updated: 2024/04/22 11:29:25 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	RPN
+NAME	=	PmergeMe
 
 CC		=	c++
 
-CFLAGS	= -std=c++98 -Wall -Werror -Wextra
+CFLAGS	= -g -std=c++98 -Wall -Werror -Wextra
 
 SRC		=	src/main.cpp \
-				src/RPN.cpp \
+				src/PmergeMe.cpp \
 
 
 OBJ		=	$(addprefix obj/, $(SRC:.cpp=.o))
