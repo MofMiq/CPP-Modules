@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:29:37 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/22 13:34:54 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:34:10 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ class PmergeMe {
     }
 
     void  printTime(size_t size, int i, double time);
+    bool  checkArg();
     void  sortVector();
+    void  algoVector(std::vector<int>& vector);
     void  sortList();
 
     class NotNumericArgs : std::exception

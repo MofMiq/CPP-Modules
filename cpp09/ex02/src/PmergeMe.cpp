@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:22:02 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/22 17:08:09 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:47:01 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,13 @@ void PmergeMe::printTime(size_t size, int i, double time) //refes
   std::cout << std::fixed << std::setprecision(6) << time << " us" << END << std::endl;
 }
 
-void PmergeMe::sortVector()
+bool  PmergeMe::checkArg()
 {
   if (this->_numbers.empty())
     throw EmptyCont();
+
   std::istringstream nb(this->_numbers);
   std::string token;
-  clock_t start = clock();
 
   try
   {
@@ -85,34 +85,68 @@ void PmergeMe::sortVector()
     {
       if (!std::isdigit(static_cast<char>(token[0])))
         throw NotNumericArgs();
-      this->_vector.push_back(std::atoi(token.c_str()));
     }
-    if (this->_vector.size() < 2 || this->_vector.size() > 3000)
-      throw InvalidSize();
-    this->printCont(this->_vector, 0);
+    return true;
   }
   catch (const NotNumericArgs& e)
   {
     std::cerr << RED << e.what() << END << std::endl;
+  }
+  catch (const EmptyCont& e)
+  {
+    std::cerr << RED << e.what() << END << std::endl;
+  }
+  return false;
+}
+
+void PmergeMe::sortVector()
+{
+  if (!this->checkArg())
     return ;
+
+  std::istringstream nb(this->_numbers);
+  std::string token;
+  clock_t start = clock();
+
+  try
+  {
+    while (nb >> token)
+      this->_vector.push_back(std::atoi(token.c_str()));
+    if (this->_vector.size() < 2 || this->_vector.size() > 3000)
+      throw InvalidSize();
   }
   catch (const InvalidSize& e)
   {
     std::cerr << RED << e.what() << END << std::endl;
     return ;
   }
-  catch (const EmptyCont& e)
-  {
-    std::cerr << RED << e.what() << END << std::endl;
-    return ;
-  }
 
-  
+  this->printCont(this->_vector, 0);
+  this->algoVector(this->_vector);
 
   clock_t end = clock();
   double diff = static_cast<double>(end - start) / CLOCKS_PER_SEC;
   this->printCont(this->_vector, 1);
   this->printTime(this->_vector.size(), 0, diff);
+}
+
+/*   static int i = 0;
+  static int j = 0; */
+
+void  PmergeMe::algoVector(std::vector<int>& vector)
+{
+  if (vector.size() < 2) //para salir de la recursividad
+    return ;
+  std::vector<int>::iterator mid = vector.begin();
+  std::advance(mid, vector.size() / 2);
+  
+  std::vector<int> left(vector.begin(), mid);
+  std::vector<int> right(mid, vector.end());
+
+  this->algoVector(left);
+  this->algoVector(right);
+
+  std::merge(left.begin(), left.end(), right.begin(), right.end(), vector.begin());
 }
 
 void PmergeMe::sortList()
@@ -127,7 +161,7 @@ void PmergeMe::sortList()
     {
       if (std::isdigit(static_cast<char>(token[0])))
         throw NotNumericArgs();
-      this->_list.push_back(std::atoi(token.c_str()));
+      //this->_list.push_back(std::atoi(token.c_str()));
     }
     if (this->_list.size() < 2 || this->_list.size() > 3000)
       throw InvalidSize();

@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:23:18 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/22 13:25:03 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/23 11:32:47 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     std::string str = std::string(argv[1]);
     PmergeMe  obj(str);
     obj.sortVector();
-    obj.sortList();
+    //obj.sortList();
     return 0;
   }
   std::cout << RED << "Error: usage: ./PmergeMe \"<numbers>\"" << END << std::endl;
