@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 11:27:58 by marirodr          #+#    #+#              #
-#    Updated: 2024/04/23 12:24:21 by marirodr         ###   ########.fr        #
+#    Updated: 2024/04/23 16:48:23 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	PmergeMe
 
 CC		=	c++
 
-CFLAGS	= -g -std=c++98 -Wall -Werror -Wextra
+CFLAGS	= -std=c++98 -Wall -Werror -Wextra
 
 SRC		=	src/main.cpp \
 				src/PmergeMe.cpp \

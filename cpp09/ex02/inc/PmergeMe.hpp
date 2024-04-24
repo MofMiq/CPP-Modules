@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:29:37 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/23 12:34:10 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:55:24 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,24 +42,12 @@ class PmergeMe {
     std::vector<int>  getVector() const;
     std::list<int>    getList() const;
 
-    template <typename T>
-    void  printCont(const T& cont, int i) const
-    {
-      if (i == 0)
-        std::cout << GREEN << "Before: ";
-      else
-        std::cout << PURPLE << "After: ";
-      typename T::const_iterator it = cont.begin();
-      for (; it != cont.end(); ++it)
-        std::cout << *it << " ";
-      std::cout << END << std::endl;
-    }
+    bool  checkArg();
+    void  printCont(int i) const;
 
     void  printTime(size_t size, int i, double time);
-    bool  checkArg();
-    void  sortVector();
-    void  algoVector(std::vector<int>& vector);
-    void  sortList();
+  
+    void  sort();
 
     class NotNumericArgs : std::exception
     {

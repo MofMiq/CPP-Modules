@@ -6,31 +6,33 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:23:18 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/23 11:32:47 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:43:40 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/PmergeMe.hpp"
 
+std::string matrixToString(char** argv)
+{
+  std::string str;
+  for (int i = 1; argv[i]; i++)
+  {
+    str += argv[i];
+    if (argv[i + 1])
+      str += " ";
+  }
+  return str;
+}
+
 int main(int argc, char **argv)
 {
-  //check args
-  //intanciate with argv[1]
-  //time start
-  //insert while checking isdigit (character and negative numbers)
-  //print before 
-  //check size + 3000
-  //sort
-  //time end
-  // print after and time
-  if (argc == 2)
+  if (argc >= 2)
   {
-    std::string str = std::string(argv[1]);
+    std::string str = matrixToString(argv);
     PmergeMe  obj(str);
-    obj.sortVector();
-    //obj.sortList();
+    obj.sort();
     return 0;
   }
-  std::cout << RED << "Error: usage: ./PmergeMe \"<numbers>\"" << END << std::endl;
+  std::cout << RED << "Error: usage: ./PmergeMe <numbers>" << END << std::endl;
   return 1;
 }

@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:00:43 by hunter            #+#    #+#             */
-/*   Updated: 2024/04/22 13:32:25 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:48:29 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,18 +73,24 @@ bool RPN::isSign(std::string& c)
 
 float RPN::operation(std::string& token, float n1, float n2)
 {
-  //std::cout << RED << "n1: " << n1 << " n2: " << n2 << END << std::endl;
-  if (token == "+")
-    return n1 + n2;
-  else if (token == "-")
-    return n1 - n2;
-  else if (token == "*")
-    return n1 * n2;
-  else if (token == "/")
+  try
   {
-    if (n2 == 0)
-      throw std::runtime_error("Error: Division by zero");
-    return n1 / n2;
+    if (token == "+")
+      return n1 + n2;
+    else if (token == "-")
+      return n1 - n2;
+    else if (token == "*")
+      return n1 * n2;
+    else if (token == "/")
+    {
+      if (n2 == 0)
+        throw std::runtime_error("Error: Division by zero");
+      return n1 / n2;
+    }
+  }
+  catch(const std::runtime_error& e)
+  {
+    std::cerr << e.what() << '\n';
   }
   return 0;
 }
@@ -117,7 +123,6 @@ void  RPN::calculate()
         float n1 = this->_stack.top();
         this->_stack.pop();
         float res = this->operation(token, n1, n2);
-        //std::cout << YELLOW << res << END << std::endl;
         this->_stack.push(res);
       }
       else

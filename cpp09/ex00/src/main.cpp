@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hunter <hunter@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:33:35 by marirodr          #+#    #+#             */
-/*   Updated: 2024/04/17 20:51:45 by hunter           ###   ########.fr       */
+/*   Updated: 2024/04/24 11:12:10 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,6 @@
 #include <climits>
 
 bool ft_check_number(const std::string& date, size_t i);
-
-bool  ft_check_extension(const std::string& file, const std::string& ext)
-{
-  if (file.find(ext, file.length() - 4))
-    return true;
-  else
-  {
-    std::cout << "Error: file extension is wrong" << std::endl;
-    return false;
-  }
-}
 
 bool ft_check(const std::string& file)
 {
@@ -51,12 +40,6 @@ std::map<std::string, float> ft_copy_database(const std::string& file, char c)
   std::string   line;
   std::getline(infile, line);
 
-/*  if (line != "date,exchange_rate")
-  {
-    std::cout << "Error: bad file format" << std::endl;
-    return ;
-  } */
-
   std::map<std::string, float> copy;
   while (std::getline(infile, line))
   {
@@ -72,14 +55,8 @@ bool ft_check_date(const std::string& line)
 {
   size_t i = line.find('|');
   std::string date = line.substr(0, i - 1);
-  //std::cout << "date:" << date << "|" << std::endl;
   try
   {
-/*   if (i == std::string::npos)
-  {
-    std::cout << "Character '|' not found" << std::endl;
-    return false;
-  } */
     if (date.length() != 10)
       throw std::runtime_error("Error: Bad format for date\nMust be like YYYY-MM-DD");
     if (date[4] != '-' || date[7] != '-')
@@ -108,16 +85,18 @@ bool ft_check_date(const std::string& line)
       throw std::runtime_error("Error: not data avaliable before 2009-01-01. Your date: ");
     if (month < 1 || month > 12)
       throw std::runtime_error("Error: bad input => ");
-    if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 || day > 30)) //meses 30:
+    if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 || day > 30))
       throw std::runtime_error("Error: bad input => ");
-    if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) //febrero y  los bisiestos
+    if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))
     {
       if (day > 29)
         throw std::runtime_error("Error: bad input => ");
       else if (day > 28)
         throw std::runtime_error("Error: bad input => ");
     }
-    else if (day > 31) //meses 31:
+    else if (month == 2 && day >= 30)
+        throw std::runtime_error("Error: bad input => ");
+    else if (day > 31)
         throw std::runtime_error("Error: bad input => ");
   }
   catch (const std::runtime_error& e)
@@ -127,32 +106,28 @@ bool ft_check_date(const std::string& line)
   }
   if (!ft_check_number(line, i))
     return false;
-  //std::cout << GREEN << "year: " << year << " month: " << month << " day: " << day << END << std::endl;
   return true;
 }
 
 bool ft_check_number(const std::string& line, size_t i)
 {
-  //std::cout << "ft_check_number: str: " << line << " i:" << i << std::endl;
   try
   {
     if (line.length() < 13)
-      throw std::runtime_error("Nunca deberias entrar aqui en verdad ya");
+      throw std::runtime_error("Error: There must be a number");
     std::string numberStr = line.substr(i + 2, line.length());
-    
-    //std::cout << YELLOW << "numberStr:" << numberStr << std::endl; // Checkear esto bien
 
+    int c = 0;
     for(size_t i = 0; i != numberStr.length(); i++)
     {
-      if (!std::isdigit(numberStr[i]) && numberStr[i] != '.')
+      if (numberStr[i] == '.')
+        c++;
+      if ((!std::isdigit(numberStr[i]) && numberStr[i] != '.') || c > 1)
         throw std::runtime_error("Error: A number can't have not numeric characters");
     }
     float number = atof(numberStr.c_str());
-    if (number < 0 || number > 1000)
+    if (number > 1000)
       throw std::runtime_error("Error: number value must be between 0 and 1000");
-    if (number >= INT_MAX)
-      throw std::runtime_error("Error: too large a number");
-    //std::cout << "number: " << number << std::endl;
   }
   catch (const std::runtime_error& e)
   {
@@ -178,16 +153,11 @@ bool  ft_read_input(const std::string& file, const BitcoinExchange& database)
 
   while (std::getline(input, line))
   {
-    //checkear formato fecha 
-      //buscar fecha o mas cercana
-      //multipcar value con numero final
-      //imprimir en formatoadecuado
     if (ft_check_date(line))
     {
       size_t i = line.find('|');
       std::string date = line.substr(0, i - 1);
       float value = atof(line.substr(i + 2, line.length()).c_str());
-      //std::cout << "checkeando la fecha: date: " << date << " value: " << value << std::endl;
       std::cout << date << " => " << value << " = " << database.findValue(date, value) << std::endl;
       
     }
@@ -203,8 +173,6 @@ int main(int argc, char **argv)
     if (ft_check("data.csv"))
     {
       BitcoinExchange data(ft_copy_database("data.csv", ','));
-      //std::cout << data << "------" << std::endl;
-
       if (!ft_read_input(std::string(argv[1]), data))
         return 0;
       else
