@@ -6,7 +6,7 @@
 #    By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 11:29:54 by marirodr          #+#    #+#              #
-#    Updated: 2023/11/22 11:57:27 by marirodr         ###   ########.fr        #
+#    Updated: 2024/04/24 16:11:51 by marirodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC		= c++
 FLAGS	= -std=c++98 -Wall -Wextra -Werror
 
 SRC		= src/Account.cpp \
-		  src/tests.cpp \
+		  	src/tests.cpp \
 
 OBJ		= $(SRC:.cpp=.o)
 

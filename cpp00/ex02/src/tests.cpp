@@ -12,7 +12,6 @@
 #include <functional>
 #include "../inc/Account.hpp"
 
-
 int		main( void ) {
 
 	typedef std::vector<Account::t>							  accounts_t;
@@ -62,7 +61,7 @@ int		main( void ) {
 
 	return 0;
 }
-
+//std::mem_fun_ref -> deprecated in c++11 and removed c++17
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
