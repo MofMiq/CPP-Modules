@@ -6,7 +6,7 @@
 /*   By: marirodr <marirodr@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:30:11 by marirodr          #+#    #+#             */
-/*   Updated: 2023/11/22 13:57:52 by marirodr         ###   ########.fr       */
+/*   Updated: 2024/04/29 10:18:16 by marirodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(int argc, char **argv)
         j = -1;
         while (argv[i][++j])
             std::cout << (char)std::toupper(argv[i][j]);
+        std::cout << " ";
     }
     std::cout << std::endl;
     return (0);
