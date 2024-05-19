@@ -28,7 +28,7 @@ Some new concepts we are going to learn in this modelue are:
 * Static and const
 * Some other basic stuff
 
-### 1️⃣ Module 01
+### 1️⃣ Module 01 ([wiki](https://github.com/MofMiq/CPP-Modules/wiki/module-01)) 
 > The grade in this module is 100/100 ✅
 
 This module is designed to help you understand:
@@ -39,7 +39,7 @@ This module is designed to help you understand:
 * Scope
 * Switch statement
 
-### 2️⃣ Module 02
+### 2️⃣ Module 02 ([wiki](https://github.com/MofMiq/CPP-Modules/wiki/module-02)) 
 > The grade in this module is 100/100 ✅
 
 This module is designed to help you understand:
@@ -47,7 +47,7 @@ This module is designed to help you understand:
 * Operator overloading
 * Orthodox canonical class form
 
-### 3️⃣ Module 03
+### 3️⃣ Module 03 ([wiki](https://github.com/MofMiq/CPP-Modules/wiki/module-03))
 > The grade in this module is 100/100 ✅
 
 This module is designed to help you understand:
@@ -56,7 +56,7 @@ This module is designed to help you understand:
 * Multiple inheritance
 * Diamond problem
  
-### 4️⃣ Module 04
+### 4️⃣ Module 04 ([wiki](https://github.com/MofMiq/CPP-Modules/wiki/module-04)) 
 > The grade in this module is 100/100 ✅
 
 This module is designed to help you understand:
@@ -65,14 +65,14 @@ This module is designed to help you understand:
 *  Virtual keyword
 *  Interfaces
  
-### 5️⃣ Module 05
+### 5️⃣ Module 05 ([wiki](https://github.com/MofMiq/CPP-Modules/wiki/module-05)) 
 > The grade in this module is 100/100 ✅
 
 This module is designed to help you understand:
 *  Try/Catch
 *  Exceptions
 
-### 6️⃣ Module 06
+### 6️⃣ Module 06 ([wiki](https://github.com/MofMiq/CPP-Modules/wiki/module-06)) 
 > The grade in this module is 100/100 ✅
 
 This module is designed to help you understand C++ casts:
@@ -81,13 +81,13 @@ This module is designed to help you understand C++ casts:
 *  const_cast
 *  reinterpret_cast
 
-### 7️⃣ Module 07
+### 7️⃣ Module 07 ([wiki](https://github.com/MofMiq/CPP-Modules/wiki/module-07)) 
 > The grade in this module is 100/100 ✅
 
 This module is designed to help you understand:
 *  Templates
 
-### 8️⃣ Module 08
+### 8️⃣ Module 08 ([wiki](https://github.com/MofMiq/CPP-Modules/wiki/module-08)) 
 > The grade in this module is 100/100 ✅
 
 This module is designed to help you understand:
@@ -98,6 +98,4 @@ This module is designed to help you understand:
 ### 9️⃣ Module 09
 > The grade in this module is 100/100 ✅
 
-This module is designed to help you understand:
-•  Containers
-•  STL
+This module is designed to apply, in a more complex way through a series of exercises, not only what was learned in module 08 but also everything from the other modules. Ultimately, it serves as a compendium.
